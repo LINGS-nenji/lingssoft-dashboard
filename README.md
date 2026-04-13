@@ -43,14 +43,14 @@ This project is configured to be hosted on GitHub Pages.
 [http://LINGS-nenji.github.io/lingssoft-dashboard](http://LINGS-nenji.github.io/lingssoft-dashboard)
 
 ### How to Deploy
-To update the live website, run:
-```bash
-npm run deploy
-```
-> [!NOTE]
-> This command will automatically:
-> 1. Run npm run build (via predeploy)
-> 2. Push the contents of the build folder to the gh-pages branch.
+This project uses **GitHub Actions** for automatic deployment. 
+Any changes pushed to the `main` branch will trigger the deployment workflow:
+
+1. **Automation**: The [Deploy to GitHub Pages](.github/workflows/deploy.yml) workflow automatically builds and deploys the site.
+2. **Monitoring**: You can check the progress in the **Actions** tab of the GitHub repository.
+
+> [!IMPORTANT]
+> To ensure this works, go to **Settings > Pages** in your GitHub repository and set the **Build and deployment > Source** to **"GitHub Actions"**.
 
 ---
 
