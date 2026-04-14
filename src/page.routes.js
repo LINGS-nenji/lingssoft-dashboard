@@ -201,35 +201,8 @@ const pageRoutes = [
       },
     ],
   },
-  {
-    name: "docs",
-    collapse: [
-      {
-        name: "getting started",
-        href: "https://www.creative-tim.com/learning-lab/react/quick-start/material-dashboard/",
-        description: "All about overview, quick start, license and contents",
-        icon: <Icon>article</Icon>,
-      },
-      {
-        name: "foundation",
-        href: "https://www.creative-tim.com/learning-lab/react/colors/material-dashboard/",
-        description: "See our colors, icons and typography",
-        icon: <Icon>grading</Icon>,
-      },
-      {
-        name: "components",
-        href: "https://www.creative-tim.com/learning-lab/react/alerts/material-dashboard/",
-        description: "Explore our collection of fully designed components",
-        icon: <Icon>apps</Icon>,
-      },
-      {
-        name: "plugins",
-        href: "https://www.creative-tim.com/learning-lab/react/datepicker/material-dashboard/",
-        description: "Check how you can integrate our plugins",
-        icon: <Icon>extension</Icon>,
-      },
-    ],
   },
+];
 ];
 
 export default pageRoutes;

@@ -38,11 +38,6 @@ function CoverLayout({ coverHeight = "35vh", image, children }) {
     <PageLayout>
       <DefaultNavbar
         routes={pageRoutes}
-        action={{
-          type: "external",
-          route: "https://creative-tim.com/product/material-dashboard-pro-react",
-          label: "buy now",
-        }}
         transparent
         light
       />

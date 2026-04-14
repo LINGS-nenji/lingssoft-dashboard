@@ -50,19 +50,12 @@ function Footer({ light = false }) {
             color={light ? "white" : "text"}
             fontSize={size.sm}
           >
-            &copy; {new Date().getFullYear()}, made with
-            <MDBox fontSize={size.md} color={light ? "white" : "dark"} mb={-0.5} mx={0.25}>
-              <Icon color="inherit" fontSize="inherit">
-                favorite
-              </Icon>
-            </MDBox>
-            by
-            <Link href="https://www.creative-tim.com/" target="_blank">
+            All rights reserved. Copyright &copy; {new Date().getFullYear()}
+            <Link href="https://lings-nenji.github.io/lingssoft-site" target="_blank">
               <MDTypography variant="button" fontWeight="medium" color={light ? "white" : "dark"}>
-                &nbsp;Creative Tim&nbsp;
+                &nbsp;LINGSSOFT by nenji Jay&nbsp;
               </MDTypography>
             </Link>
-            for a better web.
           </MDBox>
           <MDBox
             component="ul"
@@ -82,18 +75,18 @@ function Footer({ light = false }) {
             })}
           >
             <MDBox component="li" pr={2} lineHeight={1}>
-              <Link href="https://www.creative-tim.com/" target="_blank">
+              <Link href="https://lings-nenji.github.io/lingssoft-site" target="_blank">
                 <MDTypography
                   variant="button"
                   fontWeight="regular"
                   color={light ? "white" : "dark"}
                 >
-                  Creative Tim
+                  LINGSSOFT
                 </MDTypography>
               </Link>
             </MDBox>
             <MDBox component="li" px={2} lineHeight={1}>
-              <Link href="https://www.creative-tim.com/presentation" target="_blank">
+              <Link href="https://lings-nenji.github.io/lingssoft-site/#/pages/company/about-us" target="_blank">
                 <MDTypography
                   variant="button"
                   fontWeight="regular"
@@ -104,7 +97,7 @@ function Footer({ light = false }) {
               </Link>
             </MDBox>
             <MDBox component="li" px={2} lineHeight={1}>
-              <Link href="https://www.creative-tim.com/blog" target="_blank">
+              <Link href="#" target="_blank">
                 <MDTypography
                   variant="button"
                   fontWeight="regular"
@@ -115,7 +108,7 @@ function Footer({ light = false }) {
               </Link>
             </MDBox>
             <MDBox component="li" pl={2} lineHeight={1}>
-              <Link href="https://www.creative-tim.com/license" target="_blank">
+              <Link href="https://lings-nenji.github.io/lingssoft-site/#/pages/support/license" target="_blank">
                 <MDTypography
                   variant="button"
                   fontWeight="regular"

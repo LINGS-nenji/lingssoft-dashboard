@@ -28,12 +28,12 @@ import MDTypography from "components/MDTypography";
 import typography from "assets/theme/base/typography";
 
 function Footer({ 
-  company = { href: "https://www.creative-tim.com/", name: "Creative Tim" }, 
+  company = { href: "https://lings-nenji.github.io/lingssoft-site", name: "LINGSSOFT by nenji Jay" }, 
   links = [
-    { href: "https://www.creative-tim.com/", name: "Creative Tim" },
-    { href: "https://www.creative-tim.com/presentation", name: "About Us" },
-    { href: "https://www.creative-tim.com/blog", name: "Blog" },
-    { href: "https://www.creative-tim.com/license", name: "License" },
+    { href: "https://lings-nenji.github.io/lingssoft-site", name: "LINGSSOFT" },
+    { href: "https://lings-nenji.github.io/lingssoft-site/#/pages/company/about-us", name: "About Us" },
+    { href: "#", name: "Blog" },
+    { href: "https://lings-nenji.github.io/lingssoft-site/#/pages/support/license", name: "License" },
   ] 
 }) {
   const { href, name } = company;
@@ -68,19 +68,12 @@ function Footer({
         fontSize={size.sm}
         px={1.5}
       >
-        &copy; {new Date().getFullYear()}, made with
-        <MDBox fontSize={size.md} color="text" mb={-0.5} mx={0.25}>
-          <Icon color="inherit" fontSize="inherit">
-            favorite
-          </Icon>
-        </MDBox>
-        by
+        All rights reserved. Copyright &copy; {new Date().getFullYear()}
         <Link href={href} target="_blank">
           <MDTypography variant="button" fontWeight="medium">
             &nbsp;{name}&nbsp;
           </MDTypography>
         </Link>
-        for a better web.
       </MDBox>
       <MDBox
         component="ul"

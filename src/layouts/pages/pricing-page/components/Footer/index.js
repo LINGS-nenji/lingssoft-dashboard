@@ -122,7 +122,7 @@ function Footer() {
         </Grid>
         <Grid item xs={12} lg={8} sx={{ textAlign: "center" }}>
           <MDTypography variant="body2" color="secondary">
-            Copyright &copy; 2021 Material by Creative Tim.
+            All rights reserved. Copyright &copy; {new Date().getFullYear()} LINGSSOFT by nenji Jay.
           </MDTypography>
         </Grid>
       </Grid>
