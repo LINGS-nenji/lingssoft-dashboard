@@ -1,9 +1,9 @@
 # LINGSSOFT Dashboard
 
-Official LINGSSOFT Dashboard built with Material Dashboard 3 PRO React
+Official LINGSSOFT Dashboard (Creative Tim template based)
 
 ## Overview
-This repository hosts the official LINGSSOFT Dashboard. The project is based on a premium template from Creative Tim, featuring AI, security, and education solution management interfaces.
+This repository hosts the official LINGSSOFT Dashboard built on Creative Tim’s Material Dashboard template. The template was purchased, and all template sources and design assets remain under Creative Tim copyright.
 
 ---
 
