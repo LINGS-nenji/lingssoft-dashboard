@@ -10,13 +10,13 @@ This repository hosts the official LINGSSOFT Dashboard. The project is based on 
 ## Quick Start
 
 ### Prerequisites
-- Node.js : v18+ (LTS recommended)
+- Node.js : v24.14.1 (LTS recommended)
 - Package Manager : npm
 
 ### Installation
 ```bash
 # Install dependencies
-npm install --legacy-peer-deps
+npm install
 ```
 
 ### Development
