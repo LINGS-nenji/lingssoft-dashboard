@@ -1,0 +1,13 @@
+{
+  "translation": {
+    "app": {
+      "name": "LINGSSOFT Dashboard",
+      "footer": {
+        "copyright": "by LINGS-nenji. All rights reserved."
+      }
+    },
+    "sidebar": {
+      "dashboard": "Dashboard"
+    }
+  }
+}

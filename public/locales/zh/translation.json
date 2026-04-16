@@ -1,0 +1,13 @@
+{
+  "translation": {
+    "app": {
+      "name": "LINGSSOFT 控制面板",
+      "footer": {
+        "copyright": "作者: LINGS-nenji. 版权所有."
+      }
+    },
+    "sidebar": {
+      "dashboard": "仪表板"
+    }
+  }
+}

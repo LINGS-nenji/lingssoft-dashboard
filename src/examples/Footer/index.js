@@ -13,6 +13,7 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
+import { useTranslation } from "react-i18next";
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
@@ -36,6 +37,7 @@ function Footer({
     { href: "https://lings-nenji.github.io/lingssoft-site/#/pages/support/license", name: "License" },
   ] 
 }) {
+  const { t } = useTranslation();
   const { href, name } = company;
   const { size } = typography;
 
@@ -68,7 +70,7 @@ function Footer({
         fontSize={size.sm}
         px={1.5}
       >
-        All rights reserved. Copyright &copy; {new Date().getFullYear()}
+        &copy; {new Date().getFullYear()}, {t('app.footer.copyright')}
         <Link href={href} target="_blank">
           <MDTypography variant="button" fontWeight="medium">
             &nbsp;{name}&nbsp;

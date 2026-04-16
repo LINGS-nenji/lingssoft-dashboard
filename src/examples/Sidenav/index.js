@@ -18,6 +18,9 @@ import { useEffect, useState } from "react";
 // react-router-dom components
 import { useLocation, NavLink } from "react-router-dom";
 
+// i18n
+import { useTranslation } from "react-i18next";
+
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
 
@@ -49,6 +52,7 @@ import {
 } from "context";
 
 function Sidenav({ color = "info", brand = "", brandName, routes, ...rest }) {
+  const { t } = useTranslation();
   const [openCollapse, setOpenCollapse] = useState(false);
   const [openNestedCollapse, setOpenNestedCollapse] = useState(false);
   const [controller, dispatch] = useMaterialUIController();
@@ -113,11 +117,11 @@ function Sidenav({ color = "info", brand = "", brandName, routes, ...rest }) {
           rel="noreferrer"
           sx={{ textDecoration: "none" }}
         >
-          <SidenavItem name={name} nested />
+          <SidenavItem name={t(name)} nested />
         </Link>
       ) : (
         <NavLink to={route} key={key} sx={{ textDecoration: "none" }}>
-          <SidenavItem name={name} active={route === pathname} nested />
+          <SidenavItem name={t(name)} active={route === pathname} nested />
         </NavLink>
       )
     );
@@ -134,7 +138,7 @@ function Sidenav({ color = "info", brand = "", brandName, routes, ...rest }) {
           <SidenavItem
             key={key}
             color={color}
-            name={name}
+            name={t(name)}
             active={key === itemParentName ? "isParent" : false}
             open={openNestedCollapse === key}
             onClick={({ currentTarget }) =>
@@ -156,11 +160,11 @@ function Sidenav({ color = "info", brand = "", brandName, routes, ...rest }) {
             rel="noreferrer"
             sx={{ textDecoration: "none" }}
           >
-            <SidenavItem color={color} name={name} active={key === itemName} />
+            <SidenavItem color={color} name={t(name)} active={key === itemName} />
           </Link>
         ) : (
           <NavLink to={route} key={key} sx={{ textDecoration: "none" }}>
-            <SidenavItem color={color} name={name} active={key === itemName} />
+            <SidenavItem color={color} name={t(name)} active={key === itemName} />
           </NavLink>
         );
       }
@@ -183,7 +187,7 @@ function Sidenav({ color = "info", brand = "", brandName, routes, ...rest }) {
               sx={{ textDecoration: "none" }}
             >
               <SidenavCollapse
-                name={name}
+                name={t(name)}
                 icon={icon}
                 active={key === collapseName}
                 noCollapse={noCollapse}
@@ -194,7 +198,7 @@ function Sidenav({ color = "info", brand = "", brandName, routes, ...rest }) {
           returnValue = (
             <NavLink to={route} key={key}>
               <SidenavCollapse
-                name={name}
+                name={t(name)}
                 icon={icon}
                 noCollapse={noCollapse}
                 active={key === collapseName}
@@ -207,7 +211,7 @@ function Sidenav({ color = "info", brand = "", brandName, routes, ...rest }) {
           returnValue = (
             <SidenavCollapse
               key={key}
-              name={name}
+              name={t(name)}
               icon={icon}
               active={key === collapseName}
               open={openCollapse === key}
@@ -235,7 +239,7 @@ function Sidenav({ color = "info", brand = "", brandName, routes, ...rest }) {
             mb={1}
             ml={1}
           >
-            {title}
+            {t(title)}
           </MDTypography>
         );
       } else if (type === "divider") {
@@ -313,6 +317,7 @@ Sidenav.propTypes = {
     "success",
     "warning",
     "error",
+    "dark",
     "dark",
   ]),
   brand: PropTypes.string,
