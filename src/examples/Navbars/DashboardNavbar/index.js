@@ -15,6 +15,10 @@ Coded by www.creative-tim.com
 
 import { useState, useEffect } from "react";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
+
 // react-router components
 import { useLocation, Link } from "react-router-dom";
 
@@ -26,6 +30,7 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 import Icon from "@mui/material/Icon";
 
 // Material Dashboard 3 PRO React components
@@ -65,7 +70,9 @@ function DashboardNavbar({ absolute = false, light = false, isMini = false }) {
     openConfigurator,
     darkMode,
   } = controller;
+  const { i18n } = useTranslation();
   const [openMenu, setOpenMenu] = useState(false);
+  const [openLanguageMenu, setOpenLanguageMenu] = useState(false);
   const route = useLocation().pathname.split("/").slice(1);
 
   useEffect(() => {
@@ -102,6 +109,13 @@ function DashboardNavbar({ absolute = false, light = false, isMini = false }) {
     setOpenConfigurator(dispatch, !openConfigurator);
   const handleOpenMenu = (event) => setOpenMenu(event.currentTarget);
   const handleCloseMenu = () => setOpenMenu(false);
+  const handleOpenLanguageMenu = (event) => setOpenLanguageMenu(event.currentTarget);
+  const handleCloseLanguageMenu = () => setOpenLanguageMenu(false);
+
+  const handleLanguageChange = (lang) => {
+    i18n.changeLanguage(lang);
+    handleCloseLanguageMenu();
+  };
 
   // Render the notifications menu
   const renderMenu = () => (
@@ -124,6 +138,42 @@ function DashboardNavbar({ absolute = false, light = false, isMini = false }) {
       <NotificationItem
         icon={<Icon>shopping_cart</Icon>}
         title="Payment successfully completed"
+      />
+    </Menu>
+  );
+
+  // Render the language menu
+  const renderLanguageMenu = () => (
+    <Menu
+      anchorEl={openLanguageMenu}
+      anchorReference={null}
+      anchorOrigin={{
+        vertical: "bottom",
+        horizontal: "left",
+      }}
+      open={Boolean(openLanguageMenu)}
+      onClose={handleCloseLanguageMenu}
+      sx={{ mt: 2 }}
+    >
+      <NotificationItem
+        icon={<Icon>language</Icon>}
+        title="한국어"
+        onClick={() => handleLanguageChange("ko")}
+      />
+      <NotificationItem
+        icon={<Icon>language</Icon>}
+        title="English"
+        onClick={() => handleLanguageChange("en")}
+      />
+      <NotificationItem
+        icon={<Icon>language</Icon>}
+        title="日本語"
+        onClick={() => handleLanguageChange("ja")}
+      />
+      <NotificationItem
+        icon={<Icon>language</Icon>}
+        title="中文"
+        onClick={() => handleLanguageChange("zh")}
       />
     </Menu>
   );
@@ -213,12 +263,22 @@ function DashboardNavbar({ absolute = false, light = false, isMini = false }) {
                 onClick={handleOpenMenu}
               >
                 <MDBadge badgeContent={9} color="error" size="xs" circular>
-                  <Icon sx={iconsStyle}>notifications</Icon>
-                </MDBadge>
-              </IconButton>
-              {renderMenu()}
+                    <Icon sx={iconsStyle}>notifications</Icon>
+                  </MDBadge>
+                </IconButton>
+                {renderMenu()}
+                <IconButton
+                  size="small"
+                  disableRipple
+                  color="inherit"
+                  sx={navbarIconButton}
+                  onClick={handleOpenLanguageMenu}
+                >
+                  <Icon sx={iconsStyle}>language</Icon>
+                </IconButton>
+                {renderLanguageMenu()}
+              </MDBox>
             </MDBox>
-          </MDBox>
         )}
       </Toolbar>
     </AppBar>
