@@ -1,13 +1,15 @@
 {
-  "translation": {
-    "app": {
-      "name": "LINGSSOFT 대시보드",
-      "footer": {
-        "copyright": "원작자: LINGS-nenji. 모든 권리 보유."
-      }
-    },
-    "sidebar": {
-      "dashboard": "대시보드"
+  "app": {
+    "name": "LINGSSOFT 대시보드",
+    "footer": {
+      "copyright": "모든 권리 보유.",
+      "company": "LINGSSOFT",
+      "about_us": "회사 소개",
+      "blog": "블로그",
+      "license": "라이선스"
     }
+  },
+  "sidebar": {
+    "dashboard": "대시보드"
   }
 }

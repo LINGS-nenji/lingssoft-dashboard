@@ -29,12 +29,12 @@ import MDTypography from "components/MDTypography";
 import typography from "assets/theme/base/typography";
 
 function Footer({ 
-  company = { href: "https://lings-nenji.github.io/lingssoft-site", name: "LINGSSOFT by nenji Jay" }, 
+  company = { href: "https://lings-nenji.github.io/lingssoft-site", name: "app.footer.company" }, 
   links = [
-    { href: "https://lings-nenji.github.io/lingssoft-site", name: "LINGSSOFT" },
-    { href: "https://lings-nenji.github.io/lingssoft-site/#/pages/company/about-us", name: "About Us" },
-    { href: "#", name: "Blog" },
-    { href: "https://lings-nenji.github.io/lingssoft-site/#/pages/support/license", name: "License" },
+    { href: "https://lings-nenji.github.io/lingssoft-site", name: "app.name" },
+    { href: "https://lings-nenji.github.io/lingssoft-site/#/pages/company/about-us", name: "app.footer.about_us" },
+    { href: "#", name: "app.footer.blog" },
+    { href: "https://lings-nenji.github.io/lingssoft-site/#/pages/support/license", name: "app.footer.license" },
   ] 
 }) {
   const { t } = useTranslation();
@@ -46,7 +46,7 @@ function Footer({
       <MDBox key={link.name} component="li" px={2} lineHeight={1}>
         <Link href={link.href} target="_blank">
           <MDTypography variant="button" fontWeight="regular" color="text">
-            {link.name}
+            {t(link.name)}
           </MDTypography>
         </Link>
       </MDBox>
@@ -73,7 +73,7 @@ function Footer({
         &copy; {new Date().getFullYear()}, {t('app.footer.copyright')}
         <Link href={href} target="_blank">
           <MDTypography variant="button" fontWeight="medium">
-            &nbsp;{name}&nbsp;
+            &nbsp;{t(name)}&nbsp;
           </MDTypography>
         </Link>
       </MDBox>

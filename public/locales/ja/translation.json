@@ -1,13 +1,15 @@
 {
-  "translation": {
-    "app": {
-      "name": "LINGSSOFT ダッシュボード",
-      "footer": {
-        "copyright": "作成者: LINGS-nenji. All rights reserved."
-      }
-    },
-    "sidebar": {
-      "dashboard": "ダッシュボード"
+  "app": {
+    "name": "LINGSSOFT ダッシュボード",
+    "footer": {
+      "copyright": "All rights reserved.",
+      "company": "LINGSSOFT",
+      "about_us": "会社概要",
+      "blog": "ブログ",
+      "license": "ライセンス"
     }
+  },
+  "sidebar": {
+    "dashboard": "ダッシュボード"
   }
 }
