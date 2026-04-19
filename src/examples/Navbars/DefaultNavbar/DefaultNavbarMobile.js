@@ -15,6 +15,10 @@ Coded by www.creative-tim.com
 
 import { useState } from "react";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
+
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
@@ -32,11 +36,19 @@ import MDTypography from "components/MDTypography";
 
 // Material Dashboard 3 PRO React TS exampless
 import DefaultNavbarDropdown from "examples/Navbars/DefaultNavbar/DefaultNavbarDropdown";
+import NotificationItem from "examples/Items/NotificationItem";
+
 
 function DefaultNavbarMobile({ routes, open }) {
   const [collapse, setCollapse] = useState("");
+  const { i18n } = useTranslation();
 
   const handleSetCollapse = (name) => (collapse === name ? setCollapse(false) : setCollapse(name));
+
+  const handleLanguageChange = (lang) => {
+    i18n.changeLanguage(lang);
+  };
+
 
   const renderNavbarItems = routes.map(
     ({ name, icon, collapse: routeCollapses, href, route, collapse: navCollapse }) => (
@@ -187,7 +199,40 @@ function DefaultNavbarMobile({ routes, open }) {
     <Collapse in={Boolean(open)} timeout="auto" unmountOnExit>
       <MDBox width="calc(100% + 1.625rem)" my={2} ml={-2}>
         {renderNavbarItems}
+        <DefaultNavbarDropdown
+          name="Language"
+          icon={<Icon>language</Icon>}
+          collapseStatus={collapse === "language"}
+          onClick={() => handleSetCollapse("language")}
+          collapse
+        >
+          <MDBox sx={{ height: "auto", maxHeight: "15rem", overflowY: "scroll" }}>
+            <MDBox px={2}>
+              <NotificationItem
+                icon={<Icon>language</Icon>}
+                title="한국어"
+                onClick={() => handleLanguageChange("ko")}
+              />
+              <NotificationItem
+                icon={<Icon>language</Icon>}
+                title="English"
+                onClick={() => handleLanguageChange("en")}
+              />
+              <NotificationItem
+                icon={<Icon>language</Icon>}
+                title="日本語"
+                onClick={() => handleLanguageChange("ja")}
+              />
+              <NotificationItem
+                icon={<Icon>language</Icon>}
+                title="中文"
+                onClick={() => handleLanguageChange("zh")}
+              />
+            </MDBox>
+          </MDBox>
+        </DefaultNavbarDropdown>
       </MDBox>
+
     </Collapse>
   );
 }

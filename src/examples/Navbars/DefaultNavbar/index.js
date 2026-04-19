@@ -16,6 +16,10 @@ Coded by www.creative-tim.com
 
 import { useState, useEffect, Fragment } from "react";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
+
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
 
@@ -39,6 +43,8 @@ import MDButton from "components/MDButton";
 // Material Dashboard 3 PRO React TS examples components
 import DefaultNavbarDropdown from "examples/Navbars/DefaultNavbar/DefaultNavbarDropdown";
 import DefaultNavbarMobile from "examples/Navbars/DefaultNavbar/DefaultNavbarMobile";
+import NotificationItem from "examples/Items/NotificationItem";
+
 
 // Material Dashboard 3 PRO React TS Base Styles
 import breakpoints from "assets/theme/base/breakpoints";
@@ -59,8 +65,18 @@ function DefaultNavbar({ routes, brand = "", transparent = false, light = false,
   const [arrowRef, setArrowRef] = useState(null);
   const [mobileNavbar, setMobileNavbar] = useState(false);
   const [mobileView, setMobileView] = useState(false);
+  const { i18n } = useTranslation();
+  const [openLanguageMenu, setOpenLanguageMenu] = useState(false);
 
   const openMobileNavbar = () => setMobileNavbar(!mobileNavbar);
+  const handleOpenLanguageMenu = (event) => setOpenLanguageMenu(event.currentTarget);
+  const handleCloseLanguageMenu = () => setOpenLanguageMenu(false);
+
+  const handleLanguageChange = (lang) => {
+    i18n.changeLanguage(lang);
+    handleCloseLanguageMenu();
+  };
+
 
   useEffect(() => {
     // A function that sets the display state for the DefaultNavbarMobile.
@@ -490,6 +506,54 @@ function DefaultNavbar({ routes, brand = "", transparent = false, light = false,
     </Popper>
   );
 
+  // Render the language menu
+  const renderLanguageMenu = () => (
+    <Popper
+      anchorEl={openLanguageMenu}
+      popperRef={null}
+      open={Boolean(openLanguageMenu)}
+      placement="bottom-start"
+      transition
+      style={{ zIndex: 1000 }}
+      onMouseLeave={handleCloseLanguageMenu}
+    >
+      {({ TransitionProps }) => (
+        <Grow
+          {...TransitionProps}
+          sx={{
+            transformOrigin: "left top",
+            background: ({ palette: { background, white } }) =>
+              darkMode ? background.sidenav : white.main,
+          }}
+        >
+          <MDBox shadow="lg" borderRadius="lg" p={1.625} mt={1}>
+            <NotificationItem
+              icon={<Icon>language</Icon>}
+              title="한국어"
+              onClick={() => handleLanguageChange("ko")}
+            />
+            <NotificationItem
+              icon={<Icon>language</Icon>}
+              title="English"
+              onClick={() => handleLanguageChange("en")}
+            />
+            <NotificationItem
+              icon={<Icon>language</Icon>}
+              title="日本語"
+              onClick={() => handleLanguageChange("ja")}
+            />
+            <NotificationItem
+              icon={<Icon>language</Icon>}
+              title="中文"
+              onClick={() => handleLanguageChange("zh")}
+            />
+          </MDBox>
+        </Grow>
+      )}
+    </Popper>
+  );
+
+
   return (
     <Container>
       <MDBox
@@ -526,9 +590,20 @@ function DefaultNavbar({ routes, brand = "", transparent = false, light = false,
               {brand}
             </MDTypography>
           </MDBox>
-          <MDBox color="inherit" display={{ xs: "none", lg: "flex" }} m={0} p={0}>
+          <MDBox color="inherit" display={{ xs: "none", lg: "flex" }} alignItems="center" m={0} p={0}>
             {renderNavbarItems}
+            <MDBox
+              display="flex"
+              alignItems="center"
+              color={light ? "white" : "inherit"}
+              ml={1}
+              sx={{ cursor: "pointer" }}
+              onClick={handleOpenLanguageMenu}
+            >
+              <Icon fontSize="medium">language</Icon>
+            </MDBox>
           </MDBox>
+
           {action &&
             (action.type === "internal" ? (
               <MDBox display={{ xs: "none", lg: "inline-block" }}>
@@ -581,7 +656,9 @@ function DefaultNavbar({ routes, brand = "", transparent = false, light = false,
       </MDBox>
       {dropdownMenu}
       {nestedDropdownMenu}
+      {renderLanguageMenu()}
     </Container>
+
   );
 }
 
