@@ -9,6 +9,15 @@
       "license": "라이선스"
     }
   },
+  "auth": {
+    "sign_in": "로그인",
+    "email": "이메일",
+    "password": "비밀번호",
+    "remember_me": "로그인 상태 유지",
+    "sign_in_button": "로그인",
+    "no_account": "계정이 없으신가요?",
+    "sign_up": "회원가입"
+  },
   "sidebar": {
     "dashboard": "대시보드"
   }
