@@ -13,6 +13,7 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
+import { useTranslation } from "react-i18next";
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
@@ -29,6 +30,7 @@ import MDTypography from "components/MDTypography";
 import typography from "assets/theme/base/typography";
 
 function Footer({ light = false }) {
+  const { t } = useTranslation();
   const { size } = typography;
 
   return (
@@ -50,10 +52,10 @@ function Footer({ light = false }) {
             color={light ? "white" : "text"}
             fontSize={size.sm}
           >
-            All rights reserved. Copyright &copy; {new Date().getFullYear()}
+            &copy; {new Date().getFullYear()}, {t("app.footer.copyright")}
             <Link href="https://lings-nenji.github.io/lingssoft-site" target="_blank">
               <MDTypography variant="button" fontWeight="medium" color={light ? "white" : "dark"}>
-                &nbsp;LINGSSOFT by nenji Jay&nbsp;
+                &nbsp;{t("app.footer.company")}&nbsp;
               </MDTypography>
             </Link>
           </MDBox>
@@ -81,7 +83,7 @@ function Footer({ light = false }) {
                   fontWeight="regular"
                   color={light ? "white" : "dark"}
                 >
-                  LINGSSOFT
+                  {t("app.footer.company")}
                 </MDTypography>
               </Link>
             </MDBox>
@@ -92,7 +94,7 @@ function Footer({ light = false }) {
                   fontWeight="regular"
                   color={light ? "white" : "dark"}
                 >
-                  About Us
+                  {t("app.footer.about_us")}
                 </MDTypography>
               </Link>
             </MDBox>
@@ -103,7 +105,7 @@ function Footer({ light = false }) {
                   fontWeight="regular"
                   color={light ? "white" : "dark"}
                 >
-                  Blog
+                  {t("app.footer.blog")}
                 </MDTypography>
               </Link>
             </MDBox>
@@ -114,7 +116,7 @@ function Footer({ light = false }) {
                   fontWeight="regular"
                   color={light ? "white" : "dark"}
                 >
-                  License
+                  {t("app.footer.license")}
                 </MDTypography>
               </Link>
             </MDBox>
