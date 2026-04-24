@@ -9,6 +9,15 @@
       "license": "许可证"
     }
   },
+  "auth": {
+    "sign_in": "登录",
+    "email": "电子邮件",
+    "password": "密码",
+    "remember_me": "记住我",
+    "sign_in_button": "登录",
+    "no_account": "还没有账号？",
+    "sign_up": "注册"
+  },
   "sidebar": {
     "dashboard": "仪表板"
   }

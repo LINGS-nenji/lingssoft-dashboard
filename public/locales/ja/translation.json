@@ -9,6 +9,15 @@
       "license": "ライセンス"
     }
   },
+  "auth": {
+    "sign_in": "サインイン",
+    "email": "メールアドレス",
+    "password": "パスワード",
+    "remember_me": "ログイン状態を保持する",
+    "sign_in_button": "サインイン",
+    "no_account": "アカウントをお持ちでないですか？",
+    "sign_up": "サインアップ"
+  },
   "sidebar": {
     "dashboard": "ダッシュボード"
   }
