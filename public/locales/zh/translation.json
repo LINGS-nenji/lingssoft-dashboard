@@ -11,6 +11,7 @@
   },
   "auth": {
     "sign_in": "登录",
+    "sign_in_desc": "输入您的电子邮件和密码进行登录",
     "email": "电子邮件",
     "password": "密码",
     "remember_me": "记住我",

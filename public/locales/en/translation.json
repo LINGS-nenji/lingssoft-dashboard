@@ -11,6 +11,7 @@
   },
   "auth": {
     "sign_in": "Sign In",
+    "sign_in_desc": "Enter your email and password to Sign In",
     "email": "Email",
     "password": "Password",
     "remember_me": "Remember me",

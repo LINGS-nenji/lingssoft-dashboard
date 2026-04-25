@@ -11,6 +11,7 @@
   },
   "auth": {
     "sign_in": "로그인",
+    "sign_in_desc": "이메일과 비밀번호를 입력하여 로그인하세요.",
     "email": "이메일",
     "password": "비밀번호",
     "remember_me": "로그인 상태 유지",
