@@ -18,9 +18,12 @@ i18n
       escapeValue: false, // 리액트에서 xss 처리가 이미 되므로 false 설정
     },
     
+    ns: ['translation', 'sidebar'],
+    defaultNS: 'translation',
+
     backend: {
       // 번역 파일 경로 설정 (GitHub Pages 하위 경로 대응을 위해 상대 경로 사용)
-      loadPath: 'locales/{{lng}}/translation.json',
+      loadPath: 'locales/{{lng}}/{{ns}}.json',
     },
 
     detection: {
