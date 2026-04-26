@@ -14,6 +14,7 @@ Coded by www.creative-tim.com
 */
 
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 // react-router-dom components
 import { Link } from "react-router-dom";
@@ -34,22 +35,23 @@ import IllustrationLayout from "layouts/authentication/components/IllustrationLa
 import bgImage from "assets/images/illustrations/illustration-reset.jpg";
 
 function Illustration() {
+  const { t } = useTranslation();
   const [rememberMe, setRememberMe] = useState(false);
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
 
   return (
     <IllustrationLayout
-      title="Sign In"
-      description="Enter your email and password to sign in"
+      title={t("auth.sign_in")}
+      description={t("auth.sign_in_desc")}
       illustration={bgImage}
     >
       <MDBox component="form" role="form">
         <MDBox mb={2}>
-          <MDInput type="email" label="Email" fullWidth />
+          <MDInput type="email" label={t("auth.email")} fullWidth />
         </MDBox>
         <MDBox mb={2}>
-          <MDInput type="password" label="Password" fullWidth />
+          <MDInput type="password" label={t("auth.password")} fullWidth />
         </MDBox>
         <MDBox display="flex" alignItems="center" ml={-1}>
           <Switch checked={rememberMe} onChange={handleSetRememberMe} />
@@ -60,17 +62,17 @@ function Illustration() {
             onClick={handleSetRememberMe}
             sx={{ cursor: "pointer", userSelect: "none", ml: -1 }}
           >
-            &nbsp;&nbsp;Remember me
+            &nbsp;&nbsp;{t("auth.remember_me")}
           </MDTypography>
         </MDBox>
         <MDBox mt={4} mb={1}>
           <MDButton variant="gradient" color="info" size="large" fullWidth>
-            sign in
+            {t("auth.sign_in_button")}
           </MDButton>
         </MDBox>
         <MDBox mt={3} textAlign="center">
           <MDTypography variant="button" color="text">
-            Don&apos;t have an account?{" "}
+            {t("auth.no_account")}{" "}
             <MDTypography
               component={Link}
               to="/authentication/sign-up/cover"
@@ -79,7 +81,7 @@ function Illustration() {
               fontWeight="medium"
               textGradient
             >
-              Sign up
+              {t("auth.sign_up")}
             </MDTypography>
           </MDTypography>
         </MDBox>
