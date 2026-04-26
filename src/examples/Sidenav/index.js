@@ -52,7 +52,7 @@ import {
 } from "context";
 
 function Sidenav({ color = "info", brand = "", brandName, routes, ...rest }) {
-  const { t } = useTranslation();
+  const { t } = useTranslation("sidebar");
   const [openCollapse, setOpenCollapse] = useState(false);
   const [openNestedCollapse, setOpenNestedCollapse] = useState(false);
   const [controller, dispatch] = useMaterialUIController();
