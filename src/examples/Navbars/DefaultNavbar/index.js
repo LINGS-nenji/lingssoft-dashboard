@@ -65,7 +65,7 @@ function DefaultNavbar({ routes, brand = "", transparent = false, light = false,
   const [arrowRef, setArrowRef] = useState(null);
   const [mobileNavbar, setMobileNavbar] = useState(false);
   const [mobileView, setMobileView] = useState(false);
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation("sidebar");
   const [openLanguageMenu, setOpenLanguageMenu] = useState(false);
 
   const openMobileNavbar = () => setMobileNavbar(!mobileNavbar);
@@ -106,7 +106,7 @@ function DefaultNavbar({ routes, brand = "", transparent = false, light = false,
   const renderNavbarItems = routes.map(({ name, icon, href, route, collapse }) => (
     <DefaultNavbarDropdown
       key={name}
-      name={name}
+      name={t(name)}
       icon={icon}
       href={href}
       route={route}
@@ -178,7 +178,7 @@ function DefaultNavbar({ routes, brand = "", transparent = false, light = false,
                         fontWeight="bold"
                         textTransform="capitalize"
                       >
-                        {col.name}
+                        {t(col.name)}
                       </MDTypography>
                     </MDBox>
                     {col.collapse.map((item) => (
@@ -208,7 +208,7 @@ function DefaultNavbar({ routes, brand = "", transparent = false, light = false,
                           },
                         })}
                       >
-                        {item.name}
+                        {t(item.name)}
                       </MDTypography>
                     ))}
                   </Fragment>
@@ -302,7 +302,7 @@ function DefaultNavbar({ routes, brand = "", transparent = false, light = false,
                     fontWeight="bold"
                     textTransform="capitalize"
                   >
-                    {item.name}
+                    {t(item.name)}
                   </MDTypography>
                   <MDTypography variant="button" fontWeight="regular" color="text">
                     {item.description}
@@ -312,7 +312,7 @@ function DefaultNavbar({ routes, brand = "", transparent = false, light = false,
             ) : (
               <MDBox display="flex" alignItems="center" color="text">
                 <Icon sx={{ mr: 1 }}>{item.icon}</Icon>
-                {item.name}
+                {t(item.name)}
               </MDBox>
             )}
             {item.collapse && (
@@ -437,7 +437,7 @@ function DefaultNavbar({ routes, brand = "", transparent = false, light = false,
                   >
                     {item.description ? (
                       <MDBox>
-                        {item.name}
+                        {t(item.name)}
                         <MDTypography
                           display="block"
                           variant="button"
@@ -449,7 +449,7 @@ function DefaultNavbar({ routes, brand = "", transparent = false, light = false,
                         </MDTypography>
                       </MDBox>
                     ) : (
-                      item.name
+                      t(item.name)
                     )}
                     {item.collapse && (
                       <Icon

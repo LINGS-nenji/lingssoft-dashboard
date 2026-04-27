@@ -2,89 +2,89 @@ import Icon from "@mui/material/Icon";
 
 const pageRoutes = [
   {
-    name: "pages",
+    name: "Pages",
     columns: 3,
     rowsPerColumn: 2,
     collapse: [
       {
-        name: "dashboards",
+        name: "Dashboards",
         icon: <Icon>dashboard</Icon>,
         collapse: [
           {
-            name: "analytics",
+            name: "Analytics",
             route: "/dashboards/analytics",
           },
           {
-            name: "sales",
+            name: "Sales",
             route: "/dashboards/sales",
           },
         ],
       },
       {
-        name: "users",
+        name: "Users",
         icon: <Icon>people</Icon>,
         collapse: [
           {
-            name: "reports",
+            name: "Reports",
             route: "/pages/users/reports",
           },
         ],
       },
       {
-        name: "extra",
+        name: "Extra",
         icon: <Icon>queue_play_next</Icon>,
         collapse: [
           {
-            name: "pricing page",
+            name: "Pricing Page",
             route: "/pages/pricing-page",
           },
           { name: "RTL", route: "/pages/rtl" },
           { name: "widgets", route: "/pages/widgets" },
           { name: "charts", route: "/pages/charts" },
           {
-            name: "notfications",
+            name: "Notifications",
             route: "/pages/notifications",
           },
         ],
       },
       {
-        name: "projects",
+        name: "Projects",
         icon: <Icon>precision_manufacturing</Icon>,
         collapse: [
           {
-            name: "timeline",
+            name: "Timeline",
             route: "/pages/projects/timeline",
           },
         ],
       },
       {
-        name: "account",
+        name: "Account",
         icon: <Icon>account_balance</Icon>,
         collapse: [
           {
-            name: "settings",
+            name: "Settings",
             route: "/pages/account/setting",
           },
           {
-            name: "billing",
+            name: "Billing",
             route: "/pages/account/billing",
           },
           {
-            name: "invoice",
+            name: "Invoice",
             route: "/pages/account/invoice",
           },
         ],
       },
       {
-        name: "profile",
+        name: "Profile",
         icon: <Icon>badge</Icon>,
         collapse: [
           {
-            name: "profile overview",
+            name: "Profile Overview",
             route: "/pages/profile/profile-overview",
           },
           {
-            name: "all projects",
+            name: "All Projects",
             route: "/pages/profile/all-projects",
           },
         ],
@@ -92,45 +92,45 @@ const pageRoutes = [
     ],
   },
   {
-    name: "authenticaton",
+    name: "Authentication",
     collapse: [
       {
-        name: "sign in",
+        name: "Sign In",
         dropdown: true,
         icon: <Icon>login</Icon>,
         collapse: [
           {
-            name: "basic",
+            name: "Basic",
             route: "/authentication/sign-in/basic",
           },
           {
-            name: "cover",
+            name: "Cover",
             route: "/authentication/sign-in/cover",
           },
           {
-            name: "illustration",
+            name: "Illustration",
             route: "/authentication/sign-in/illustration",
           },
         ],
       },
       {
-        name: "sign up",
+        name: "Sign Up",
         dropdown: true,
         icon: <Icon>assignment</Icon>,
         collapse: [
           {
-            name: "cover",
+            name: "Cover",
             route: "/authentication/sign-up/cover",
           },
         ],
       },
       {
-        name: "reset password",
+        name: "Reset Password",
         dropdown: true,
         icon: <Icon>restart_alt</Icon>,
         collapse: [
           {
-            name: "cover",
+            name: "Cover",
             route: "/authentication/reset-password/cover",
           },
         ],
@@ -138,63 +138,63 @@ const pageRoutes = [
     ],
   },
   {
-    name: "application",
+    name: "Application",
     collapse: [
       {
-        name: "kanban",
+        name: "Kanban",
         route: "/applications/kanban",
         icon: "widgets",
       },
       {
-        name: "wizard",
+        name: "Wizard",
         route: "/applications/wizard",
         icon: "import_contacts",
       },
       {
-        name: "data tables",
+        name: "Data Tables",
         route: "/applications/data-tables",
         icon: "backup_table",
       },
       {
-        name: "calendar",
+        name: "Calendar",
         route: "/applications/calendar",
         icon: "event",
       },
     ],
   },
   {
-    name: "ecommerce",
+    name: "Ecommerce",
     columns: 2,
     rowsPerColumn: 1,
     collapse: [
       {
-        name: "orders",
+        name: "Orders",
         icon: <Icon>shopping_cart</Icon>,
         collapse: [
           {
-            name: "order list",
+            name: "Order List",
             route: "/ecommerce/orders/order-list",
           },
           {
-            name: "order details",
+            name: "Order Details",
             route: "/ecommerce/orders/order-details",
           },
         ],
       },
       {
-        name: "products",
+        name: "Products",
         icon: <Icon>memory</Icon>,
         collapse: [
           {
-            name: "new product",
+            name: "New Product",
             route: "/ecommerce/products/new-product",
           },
           {
-            name: "edit product",
+            name: "Edit Product",
             route: "/ecommerce/products/edit-product",
           },
           {
-            name: "product page",
+            name: "Product Page",
             route: "/ecommerce/products/product-page",
           },
         ],

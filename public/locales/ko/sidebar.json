@@ -39,5 +39,11 @@
   "Cover": "커버형",
   "Illustration": "일러스트형",
   "My Profile": "내 프로필",
-  "Logout": "로그아웃"
+  "Logout": "로그아웃",
+  "Reports": "보고서",
+  "Extra": "기타",
+  "Application": "애플리케이션",
+  "Users": "사용자",
+  "Profile": "프로필",
+  "Notifications": "알림"
 }
