@@ -257,6 +257,16 @@ function DashboardNavbar({ absolute = false, light = false, isMini = false }) {
                 disableRipple
                 color="inherit"
                 sx={navbarIconButton}
+                onClick={handleOpenLanguageMenu}
+              >
+                <Icon sx={iconsStyle}>language</Icon>
+              </IconButton>
+              {renderLanguageMenu()}
+              <IconButton
+                size="small"
+                disableRipple
+                color="inherit"
+                sx={navbarIconButton}
                 aria-controls="notification-menu"
                 aria-haspopup="true"
                 variant="contained"
@@ -267,16 +277,6 @@ function DashboardNavbar({ absolute = false, light = false, isMini = false }) {
                   </MDBadge>
                 </IconButton>
                 {renderMenu()}
-                <IconButton
-                  size="small"
-                  disableRipple
-                  color="inherit"
-                  sx={navbarIconButton}
-                  onClick={handleOpenLanguageMenu}
-                >
-                  <Icon sx={iconsStyle}>language</Icon>
-                </IconButton>
-                {renderLanguageMenu()}
               </MDBox>
             </MDBox>
         )}
