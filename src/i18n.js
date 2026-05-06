@@ -18,7 +18,7 @@ i18n
       escapeValue: false, // 리액트에서 xss 처리가 이미 되므로 false 설정
     },
     
-    ns: ['translation', 'sidebar', 'configurator'],
+    ns: ['translation', 'sidebar'],
     defaultNS: 'translation',
 
     backend: {
