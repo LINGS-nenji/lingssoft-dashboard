@@ -1,0 +1,13 @@
+{
+  "title": "LINGSSOFT 配置器",
+  "description": "查看我们的仪表板选项。",
+  "sidenavColors": "侧边栏颜色",
+  "sidenavType": "侧边栏类型",
+  "sidenavDescription": "在不同的侧边栏类型之间进行选择。",
+  "dark": "暗色",
+  "transparent": "透明",
+  "white": "白色",
+  "navbarFixed": "导航栏固定",
+  "sidenavMini": "侧边栏迷你",
+  "lightDark": "浅色 / 深色"
+}

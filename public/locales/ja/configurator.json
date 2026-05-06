@@ -1,0 +1,13 @@
+{
+  "title": "LINGSSOFT 設定",
+  "description": "ダッシュボードのオプションを確認してください。",
+  "sidenavColors": "サイドナビの色",
+  "sidenavType": "サイドナビの種類",
+  "sidenavDescription": "異なるサイドナビの種類から選択してください。",
+  "dark": "ダーク",
+  "transparent": "透明",
+  "white": "ホワイト",
+  "navbarFixed": "ナビゲーションバー固定",
+  "sidenavMini": "サイドナビミニ",
+  "lightDark": "ライト / ダーク"
+}

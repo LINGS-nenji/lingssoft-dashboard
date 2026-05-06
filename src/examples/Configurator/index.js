@@ -15,6 +15,10 @@ Coded by www.creative-tim.com
 
 import { useState, useEffect } from "react";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
+
 // react-github-btn
 import GitHubButton from "react-github-btn";
 
@@ -50,7 +54,9 @@ import {
 } from "context";
 
 function Configurator() {
+  const { t } = useTranslation("configurator");
   const [controller, dispatch] = useMaterialUIController();
+
   const {
     openConfigurator,
     miniSidenav,
@@ -155,9 +161,9 @@ function Configurator() {
         px={3}
       >
         <MDBox>
-          <MDTypography variant="h5">LINGSSOFT Configurator</MDTypography>
+          <MDTypography variant="h5">{t("title")}</MDTypography>
           <MDTypography variant="body2" color="text">
-            See our dashboard options.
+            {t("description")}
           </MDTypography>
         </MDBox>
 
@@ -180,7 +186,8 @@ function Configurator() {
 
       <MDBox pt={0.5} pb={3} px={3}>
         <MDBox>
-          <MDTypography variant="h6">Sidenav Colors</MDTypography>
+          <MDTypography variant="h6">{t("sidenavColors")}</MDTypography>
+
 
           <MDBox mb={0.5}>
             {sidenavColors.map((color) => (
@@ -234,9 +241,9 @@ function Configurator() {
         </MDBox>
 
         <MDBox mt={3} lineHeight={1}>
-          <MDTypography variant="h6">Sidenav Type</MDTypography>
+          <MDTypography variant="h6">{t("sidenavType")}</MDTypography>
           <MDTypography variant="button" color="text">
-            Choose between different sidenav types.
+            {t("sidenavDescription")}
           </MDTypography>
 
           <MDBox
@@ -258,8 +265,9 @@ function Configurator() {
                   : sidenavTypeButtonsStyles
               }
             >
-              Dark
+              {t("dark")}
             </MDButton>
+
             <MDBox sx={{ mx: 1, width: "8rem", minWidth: "8rem" }}>
               <MDButton
                 color="dark"
@@ -273,8 +281,9 @@ function Configurator() {
                     : sidenavTypeButtonsStyles
                 }
               >
-                Transparent
+                {t("transparent")}
               </MDButton>
+
             </MDBox>
             <MDButton
               color="dark"
@@ -288,8 +297,9 @@ function Configurator() {
                   : sidenavTypeButtonsStyles
               }
             >
-              White
+              {t("white")}
             </MDButton>
+
           </MDBox>
         </MDBox>
         <MDBox
@@ -299,7 +309,8 @@ function Configurator() {
           mt={3}
           lineHeight={1}
         >
-          <MDTypography variant="h6">Navbar Fixed</MDTypography>
+          <MDTypography variant="h6">{t("navbarFixed")}</MDTypography>
+
 
           <Switch checked={fixedNavbar} onChange={handleFixedNavbar} />
         </MDBox>
@@ -310,7 +321,8 @@ function Configurator() {
           alignItems="center"
           lineHeight={1}
         >
-          <MDTypography variant="h6">Sidenav Mini</MDTypography>
+          <MDTypography variant="h6">{t("sidenavMini")}</MDTypography>
+
 
           <Switch checked={miniSidenav} onChange={handleMiniSidenav} />
         </MDBox>
@@ -321,7 +333,8 @@ function Configurator() {
           alignItems="center"
           lineHeight={1}
         >
-          <MDTypography variant="h6">Light / Dark</MDTypography>
+          <MDTypography variant="h6">{t("lightDark")}</MDTypography>
+
 
           <Switch checked={darkMode} onChange={handleDarkMode} />
         </MDBox>
