@@ -37,6 +37,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDButton from "components/MDButton";
+import MDAvatar from "components/MDAvatar";
 
 // Custom styles for the Configurator
 import ConfiguratorRoot from "examples/Configurator/ConfiguratorRoot";
@@ -190,49 +191,51 @@ function Configurator() {
         {/* Language Selection */}
         <MDBox mt={1} mb={2} lineHeight={1}>
           <MDTypography variant="h6">{t("language")}</MDTypography>
-          <MDBox sx={{ display: "flex", mt: 2 }}>
-            <MDButton
-              color="dark"
-              variant="gradient"
-              onClick={() => handleLanguageChange("ko")}
-              fullWidth
-              sx={i18n.language.startsWith("ko") ? sidenavTypeActiveButtonStyles : sidenavTypeButtonsStyles}
-            >
-              한국어
-            </MDButton>
-            <MDBox sx={{ ml: 1, width: "100%" }}>
-              <MDButton
-                color="dark"
-                variant="gradient"
-                onClick={() => handleLanguageChange("en")}
-                fullWidth
-                sx={i18n.language.startsWith("en") ? sidenavTypeActiveButtonStyles : sidenavTypeButtonsStyles}
+          <MDBox sx={{ display: "flex", mt: 2, justifyContent: "space-between", px: 1 }}>
+            {[
+              { code: "ko", label: "KO" },
+              { code: "en", label: "EN" },
+              { code: "ja", label: "JA" },
+              { code: "zh", label: "ZH" },
+            ].map((lang) => (
+              <MDBox
+                key={lang.code}
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+                sx={{ cursor: "pointer" }}
+                onClick={() => handleLanguageChange(lang.code)}
               >
-                English
-              </MDButton>
-            </MDBox>
-          </MDBox>
-          <MDBox sx={{ display: "flex", mt: 1 }}>
-            <MDButton
-              color="dark"
-              variant="gradient"
-              onClick={() => handleLanguageChange("ja")}
-              fullWidth
-              sx={i18n.language.startsWith("ja") ? sidenavTypeActiveButtonStyles : sidenavTypeButtonsStyles}
-            >
-              日本語
-            </MDButton>
-            <MDBox sx={{ ml: 1, width: "100%" }}>
-              <MDButton
-                color="dark"
-                variant="gradient"
-                onClick={() => handleLanguageChange("zh")}
-                fullWidth
-                sx={i18n.language.startsWith("zh") ? sidenavTypeActiveButtonStyles : sidenavTypeButtonsStyles}
-              >
-                中文
-              </MDButton>
-            </MDBox>
+                <MDAvatar
+                  bgColor={i18n.language.startsWith(lang.code) ? sidenavColor : "light"}
+                  size="sm"
+                  sx={({ transitions }) => ({
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    transition: transitions.create("all", {
+                      easing: transitions.easing.sharp,
+                      duration: transitions.duration.short,
+                    }),
+                    "&:hover": {
+                      transform: "scale(1.1)",
+                    },
+                    ...(i18n.language.startsWith(lang.code) && {
+                      boxShadow: ({ boxShadows: { colored } }) => colored[sidenavColor],
+                    }),
+                  })}
+                >
+                  <MDTypography
+                    variant="caption"
+                    fontWeight="bold"
+                    color={i18n.language.startsWith(lang.code) ? "white" : "dark"}
+                    sx={{ lineHeight: 0 }}
+                  >
+                    {lang.label}
+                  </MDTypography>
+                </MDAvatar>
+              </MDBox>
+            ))}
           </MDBox>
         </MDBox>
         <Divider />
