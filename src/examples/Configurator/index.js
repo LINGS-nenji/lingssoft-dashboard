@@ -60,6 +60,13 @@ function Configurator() {
 
   const handleLanguageChange = (lang) => i18n.changeLanguage(lang);
 
+  const flags = {
+    ko: "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/kr.svg",
+    en: "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg",
+    ja: "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/jp.svg",
+    zh: "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/cn.svg",
+  };
+
   const {
     openConfigurator,
     miniSidenav,
@@ -207,33 +214,25 @@ function Configurator() {
                 onClick={() => handleLanguageChange(lang.code)}
               >
                 <MDAvatar
-                  bgColor={i18n.language.startsWith(lang.code) ? sidenavColor : "light"}
+                  src={flags[lang.code]}
+                  alt={lang.label}
                   size="sm"
                   sx={({ transitions }) => ({
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
+                    cursor: "pointer",
                     transition: transitions.create("all", {
                       easing: transitions.easing.sharp,
                       duration: transitions.duration.short,
                     }),
                     "&:hover": {
-                      transform: "scale(1.1)",
+                      transform: "scale(1.2)",
                     },
+                    border: i18n.language.startsWith(lang.code) ? "2px solid" : "none",
+                    borderColor: i18n.language.startsWith(lang.code) ? sidenavColor : "transparent",
                     ...(i18n.language.startsWith(lang.code) && {
                       boxShadow: ({ boxShadows: { colored } }) => colored[sidenavColor],
                     }),
                   })}
-                >
-                  <MDTypography
-                    variant="caption"
-                    fontWeight="bold"
-                    color={i18n.language.startsWith(lang.code) ? "white" : "dark"}
-                    sx={{ lineHeight: 0 }}
-                  >
-                    {lang.label}
-                  </MDTypography>
-                </MDAvatar>
+                />
               </MDBox>
             ))}
           </MDBox>

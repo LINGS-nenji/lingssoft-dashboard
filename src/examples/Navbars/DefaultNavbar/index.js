@@ -44,6 +44,7 @@ import MDButton from "components/MDButton";
 import DefaultNavbarDropdown from "examples/Navbars/DefaultNavbar/DefaultNavbarDropdown";
 import DefaultNavbarMobile from "examples/Navbars/DefaultNavbar/DefaultNavbarMobile";
 import NotificationItem from "examples/Items/NotificationItem";
+import MDAvatar from "components/MDAvatar";
 
 
 // Material Dashboard 3 PRO React TS Base Styles
@@ -67,6 +68,13 @@ function DefaultNavbar({ routes, brand = "", transparent = false, light = false,
   const [mobileView, setMobileView] = useState(false);
   const { t, i18n } = useTranslation("sidebar");
   const [openLanguageMenu, setOpenLanguageMenu] = useState(false);
+
+  const flags = {
+    ko: "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/kr.svg",
+    en: "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg",
+    ja: "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/jp.svg",
+    zh: "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/cn.svg",
+  };
 
   const openMobileNavbar = () => setMobileNavbar(!mobileNavbar);
   const handleOpenLanguageMenu = (event) => setOpenLanguageMenu(event.currentTarget);
@@ -528,22 +536,22 @@ function DefaultNavbar({ routes, brand = "", transparent = false, light = false,
         >
           <MDBox shadow="lg" borderRadius="lg" p={1.625} mt={1}>
             <NotificationItem
-              icon={<Icon>language</Icon>}
+              icon={<MDAvatar src={flags.ko} size="xs" />}
               title="한국어"
               onClick={() => handleLanguageChange("ko")}
             />
             <NotificationItem
-              icon={<Icon>language</Icon>}
+              icon={<MDAvatar src={flags.en} size="xs" />}
               title="English"
               onClick={() => handleLanguageChange("en")}
             />
             <NotificationItem
-              icon={<Icon>language</Icon>}
+              icon={<MDAvatar src={flags.ja} size="xs" />}
               title="日本語"
               onClick={() => handleLanguageChange("ja")}
             />
             <NotificationItem
-              icon={<Icon>language</Icon>}
+              icon={<MDAvatar src={flags.zh} size="xs" />}
               title="中文"
               onClick={() => handleLanguageChange("zh")}
             />
@@ -602,7 +610,7 @@ function DefaultNavbar({ routes, brand = "", transparent = false, light = false,
               sx={{ cursor: "pointer" }}
               onClick={handleOpenLanguageMenu}
             >
-              <Icon fontSize="medium">language</Icon>
+              <MDAvatar src={flags[i18n.language.split("-")[0]]} size="xs" />
             </MDBox>
 
             {action &&

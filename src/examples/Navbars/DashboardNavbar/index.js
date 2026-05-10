@@ -41,6 +41,7 @@ import MDBadge from "components/MDBadge";
 // Material Dashboard 3 PRO React examples
 import Breadcrumbs from "examples/Breadcrumbs";
 import NotificationItem from "examples/Items/NotificationItem";
+import MDAvatar from "components/MDAvatar";
 
 // Custom styles for DashboardNavbar
 import {
@@ -73,6 +74,13 @@ function DashboardNavbar({ absolute = false, light = false, isMini = false }) {
   const { i18n } = useTranslation();
   const [openMenu, setOpenMenu] = useState(false);
   const [openLanguageMenu, setOpenLanguageMenu] = useState(false);
+
+  const flags = {
+    ko: "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/kr.svg",
+    en: "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg",
+    ja: "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/jp.svg",
+    zh: "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/cn.svg",
+  };
   const route = useLocation().pathname.split("/").slice(1);
 
   useEffect(() => {
@@ -156,22 +164,22 @@ function DashboardNavbar({ absolute = false, light = false, isMini = false }) {
       sx={{ mt: 2 }}
     >
       <NotificationItem
-        icon={<Icon>language</Icon>}
+        icon={<MDAvatar src={flags.ko} size="xs" />}
         title="한국어"
         onClick={() => handleLanguageChange("ko")}
       />
       <NotificationItem
-        icon={<Icon>language</Icon>}
+        icon={<MDAvatar src={flags.en} size="xs" />}
         title="English"
         onClick={() => handleLanguageChange("en")}
       />
       <NotificationItem
-        icon={<Icon>language</Icon>}
+        icon={<MDAvatar src={flags.ja} size="xs" />}
         title="日本語"
         onClick={() => handleLanguageChange("ja")}
       />
       <NotificationItem
-        icon={<Icon>language</Icon>}
+        icon={<MDAvatar src={flags.zh} size="xs" />}
         title="中文"
         onClick={() => handleLanguageChange("zh")}
       />
@@ -250,7 +258,7 @@ function DashboardNavbar({ absolute = false, light = false, isMini = false }) {
                 sx={navbarIconButton}
                 onClick={handleOpenLanguageMenu}
               >
-                <Icon sx={iconsStyle}>language</Icon>
+                <MDAvatar src={flags[i18n.language.split("-")[0]]} size="xs" />
               </IconButton>
               {renderLanguageMenu()}
               <IconButton
