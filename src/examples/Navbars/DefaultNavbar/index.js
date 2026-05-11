@@ -536,24 +536,24 @@ function DefaultNavbar({ routes, brand = "", transparent = false, light = false,
         >
           <MDBox shadow="lg" borderRadius="lg" p={1.625} mt={1}>
             <NotificationItem
-              icon={<MDAvatar src={flags.ko} size="xs" />}
-              title="한국어"
-              onClick={() => handleLanguageChange("ko")}
-            />
-            <NotificationItem
               icon={<MDAvatar src={flags.en} size="xs" />}
               title="English"
               onClick={() => handleLanguageChange("en")}
             />
             <NotificationItem
-              icon={<MDAvatar src={flags.ja} size="xs" />}
-              title="日本語"
-              onClick={() => handleLanguageChange("ja")}
+              icon={<MDAvatar src={flags.ko} size="xs" />}
+              title="한국어"
+              onClick={() => handleLanguageChange("ko")}
             />
             <NotificationItem
               icon={<MDAvatar src={flags.zh} size="xs" />}
               title="中文"
               onClick={() => handleLanguageChange("zh")}
+            />
+            <NotificationItem
+              icon={<MDAvatar src={flags.ja} size="xs" />}
+              title="日本語"
+              onClick={() => handleLanguageChange("ja")}
             />
           </MDBox>
         </Grow>

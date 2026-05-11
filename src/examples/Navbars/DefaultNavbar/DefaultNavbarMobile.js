@@ -29,12 +29,10 @@ import { Link } from "react-router-dom";
 import Collapse from "@mui/material/Collapse";
 import MuiLink from "@mui/material/Link";
 import Icon from "@mui/material/Icon";
-import Divider from "@mui/material/Divider";
 
 // Material Dashboard 3 PRO React TS components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
-import MDAvatar from "components/MDAvatar";
 
 // Material Dashboard 3 PRO React TS exampless
 import DefaultNavbarDropdown from "examples/Navbars/DefaultNavbar/DefaultNavbarDropdown";
@@ -44,13 +42,6 @@ import NotificationItem from "examples/Items/NotificationItem";
 function DefaultNavbarMobile({ routes, open }) {
   const [collapse, setCollapse] = useState("");
   const { t, i18n } = useTranslation("sidebar");
-
-  const flags = {
-    ko: "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/kr.svg",
-    en: "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg",
-    ja: "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/jp.svg",
-    zh: "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/cn.svg",
-  };
 
 
   const handleSetCollapse = (name) => (collapse === name ? setCollapse(false) : setCollapse(name));
@@ -209,33 +200,6 @@ function DefaultNavbarMobile({ routes, open }) {
     <Collapse in={Boolean(open)} timeout="auto" unmountOnExit>
       <MDBox width="calc(100% + 1.625rem)" my={2} ml={-2}>
         {renderNavbarItems}
-        <Divider sx={{ my: 2 }} />
-        <MDBox px={2} display="flex" justifyContent="space-around">
-          <MDAvatar
-            src={flags.ko}
-            size="sm"
-            onClick={() => handleLanguageChange("ko")}
-            sx={{ cursor: "pointer", border: i18n.language.startsWith("ko") ? "2px solid #344767" : "none" }}
-          />
-          <MDAvatar
-            src={flags.en}
-            size="sm"
-            onClick={() => handleLanguageChange("en")}
-            sx={{ cursor: "pointer", border: i18n.language.startsWith("en") ? "2px solid #344767" : "none" }}
-          />
-          <MDAvatar
-            src={flags.ja}
-            size="sm"
-            onClick={() => handleLanguageChange("ja")}
-            sx={{ cursor: "pointer", border: i18n.language.startsWith("ja") ? "2px solid #344767" : "none" }}
-          />
-          <MDAvatar
-            src={flags.zh}
-            size="sm"
-            onClick={() => handleLanguageChange("zh")}
-            sx={{ cursor: "pointer", border: i18n.language.startsWith("zh") ? "2px solid #344767" : "none" }}
-          />
-        </MDBox>
       </MDBox>
     </Collapse>
   );

@@ -200,10 +200,10 @@ function Configurator() {
           <MDTypography variant="h6">{t("language")}</MDTypography>
           <MDBox sx={{ display: "flex", mt: 2, justifyContent: "space-between", px: 1 }}>
             {[
-              { code: "ko", label: "KO" },
               { code: "en", label: "EN" },
-              { code: "ja", label: "JA" },
+              { code: "ko", label: "KO" },
               { code: "zh", label: "ZH" },
+              { code: "ja", label: "JA" },
             ].map((lang) => (
               <MDBox
                 key={lang.code}

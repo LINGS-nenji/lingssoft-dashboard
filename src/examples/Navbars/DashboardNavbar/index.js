@@ -164,24 +164,24 @@ function DashboardNavbar({ absolute = false, light = false, isMini = false }) {
       sx={{ mt: 2 }}
     >
       <NotificationItem
-        icon={<MDAvatar src={flags.ko} size="xs" />}
-        title="한국어"
-        onClick={() => handleLanguageChange("ko")}
-      />
-      <NotificationItem
         icon={<MDAvatar src={flags.en} size="xs" />}
         title="English"
         onClick={() => handleLanguageChange("en")}
       />
       <NotificationItem
-        icon={<MDAvatar src={flags.ja} size="xs" />}
-        title="日本語"
-        onClick={() => handleLanguageChange("ja")}
+        icon={<MDAvatar src={flags.ko} size="xs" />}
+        title="한국어"
+        onClick={() => handleLanguageChange("ko")}
       />
       <NotificationItem
         icon={<MDAvatar src={flags.zh} size="xs" />}
         title="中文"
         onClick={() => handleLanguageChange("zh")}
+      />
+      <NotificationItem
+        icon={<MDAvatar src={flags.ja} size="xs" />}
+        title="日本語"
+        onClick={() => handleLanguageChange("ja")}
       />
     </Menu>
   );
