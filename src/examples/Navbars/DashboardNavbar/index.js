@@ -74,13 +74,6 @@ function DashboardNavbar({ absolute = false, light = false, isMini = false }) {
   const { i18n } = useTranslation();
   const [openMenu, setOpenMenu] = useState(false);
   const [openLanguageMenu, setOpenLanguageMenu] = useState(false);
-
-  const flags = {
-    ko: "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/kr.svg",
-    en: "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg",
-    ja: "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/jp.svg",
-    zh: "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/cn.svg",
-  };
   const route = useLocation().pathname.split("/").slice(1);
 
   useEffect(() => {
@@ -164,24 +157,40 @@ function DashboardNavbar({ absolute = false, light = false, isMini = false }) {
       sx={{ mt: 2 }}
     >
       <NotificationItem
-        icon={<MDAvatar src={flags.en} size="xs" />}
+        icon={
+          <MDTypography variant="caption" fontWeight="bold" color="secondary">
+            US
+          </MDTypography>
+        }
         title="English"
         onClick={() => handleLanguageChange("en")}
       />
       <NotificationItem
-        icon={<MDAvatar src={flags.ko} size="xs" />}
+        icon={
+          <MDTypography variant="caption" fontWeight="bold" color="secondary">
+            KR
+          </MDTypography>
+        }
         title="한국어"
         onClick={() => handleLanguageChange("ko")}
       />
       <NotificationItem
-        icon={<MDAvatar src={flags.zh} size="xs" />}
-        title="中文"
-        onClick={() => handleLanguageChange("zh")}
-      />
-      <NotificationItem
-        icon={<MDAvatar src={flags.ja} size="xs" />}
+        icon={
+          <MDTypography variant="caption" fontWeight="bold" color="secondary">
+            JP
+          </MDTypography>
+        }
         title="日本語"
         onClick={() => handleLanguageChange("ja")}
+      />
+      <NotificationItem
+        icon={
+          <MDTypography variant="caption" fontWeight="bold" color="secondary">
+            CN
+          </MDTypography>
+        }
+        title="中文"
+        onClick={() => handleLanguageChange("zh")}
       />
     </Menu>
   );
@@ -258,7 +267,15 @@ function DashboardNavbar({ absolute = false, light = false, isMini = false }) {
                 sx={navbarIconButton}
                 onClick={handleOpenLanguageMenu}
               >
-                <MDAvatar src={flags[i18n.language.split("-")[0]]} size="xs" />
+                <MDTypography variant="caption" fontWeight="bold" color="inherit">
+                  {i18n.language.startsWith("ko")
+                    ? "KR"
+                    : i18n.language.startsWith("en")
+                    ? "US"
+                    : i18n.language.startsWith("ja")
+                    ? "JP"
+                    : "CN"}
+                </MDTypography>
               </IconButton>
               {renderLanguageMenu()}
               <IconButton

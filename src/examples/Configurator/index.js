@@ -60,13 +60,6 @@ function Configurator() {
 
   const handleLanguageChange = (lang) => i18n.changeLanguage(lang);
 
-  const flags = {
-    ko: "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/kr.svg",
-    en: "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg",
-    ja: "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/jp.svg",
-    zh: "https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/cn.svg",
-  };
-
   const {
     openConfigurator,
     miniSidenav,
@@ -200,10 +193,10 @@ function Configurator() {
           <MDTypography variant="h6">{t("language")}</MDTypography>
           <MDBox sx={{ display: "flex", mt: 2, justifyContent: "space-between", px: 1 }}>
             {[
-              { code: "en", label: "EN" },
-              { code: "ko", label: "KO" },
-              { code: "zh", label: "ZH" },
-              { code: "ja", label: "JA" },
+              { code: "en", label: "US" },
+              { code: "ko", label: "KR" },
+              { code: "ja", label: "JP" },
+              { code: "zh", label: "CN" },
             ].map((lang) => (
               <MDBox
                 key={lang.code}
@@ -214,25 +207,33 @@ function Configurator() {
                 onClick={() => handleLanguageChange(lang.code)}
               >
                 <MDAvatar
-                  src={flags[lang.code]}
-                  alt={lang.label}
+                  bgColor={i18n.language.startsWith(lang.code) ? sidenavColor : "light"}
                   size="sm"
                   sx={({ transitions }) => ({
-                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                     transition: transitions.create("all", {
                       easing: transitions.easing.sharp,
                       duration: transitions.duration.short,
                     }),
                     "&:hover": {
-                      transform: "scale(1.2)",
+                      transform: "scale(1.1)",
                     },
-                    border: i18n.language.startsWith(lang.code) ? "2px solid" : "none",
-                    borderColor: i18n.language.startsWith(lang.code) ? sidenavColor : "transparent",
                     ...(i18n.language.startsWith(lang.code) && {
                       boxShadow: ({ boxShadows: { colored } }) => colored[sidenavColor],
                     }),
                   })}
-                />
+                >
+                  <MDTypography
+                    variant="caption"
+                    fontWeight="bold"
+                    color={i18n.language.startsWith(lang.code) ? "white" : "dark"}
+                    sx={{ lineHeight: 0 }}
+                  >
+                    {lang.label}
+                  </MDTypography>
+                </MDAvatar>
               </MDBox>
             ))}
           </MDBox>
