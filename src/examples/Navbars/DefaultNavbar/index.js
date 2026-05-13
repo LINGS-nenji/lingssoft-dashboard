@@ -619,15 +619,7 @@ function DefaultNavbar({ routes, brand = "", transparent = false, light = false,
               sx={{ cursor: "pointer" }}
               onClick={handleOpenLanguageMenu}
             >
-              <MDTypography variant="caption" fontWeight="bold" color="inherit">
-                {i18n.language.startsWith("ko")
-                  ? "KR"
-                  : i18n.language.startsWith("en")
-                  ? "US"
-                  : i18n.language.startsWith("ja")
-                  ? "JP"
-                  : "CN"}
-              </MDTypography>
+              <Icon fontSize="medium">language</Icon>
             </MDBox>
 
             {action &&
