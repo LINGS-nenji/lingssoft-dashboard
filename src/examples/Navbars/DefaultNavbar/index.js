@@ -31,6 +31,7 @@ import Icon from "@mui/material/Icon";
 import Popper from "@mui/material/Popper";
 import Grow from "@mui/material/Grow";
 import Grid from "@mui/material/Grid";
+import Tooltip from "@mui/material/Tooltip";
 import Divider from "@mui/material/Divider";
 import MuiLink from "@mui/material/Link";
 import Container from "@mui/material/Container";
@@ -51,10 +52,10 @@ import MDAvatar from "components/MDAvatar";
 import breakpoints from "assets/theme/base/breakpoints";
 
 // Material Dashboard 3 PRO React context
-import { useMaterialUIController } from "context";
+import { useMaterialUIController, setDarkMode } from "context";
 
 function DefaultNavbar({ routes, brand = "", transparent = false, light = false, action = false }) {
-  const [controller] = useMaterialUIController();
+  const [controller, dispatch] = useMaterialUIController();
   const { darkMode } = controller;
 
   const [dropdown, setDropdown] = useState("");
@@ -77,6 +78,8 @@ function DefaultNavbar({ routes, brand = "", transparent = false, light = false,
     i18n.changeLanguage(lang);
     handleCloseLanguageMenu();
   };
+
+  const handleDarkMode = () => setDarkMode(dispatch, !darkMode);
 
 
   useEffect(() => {
@@ -615,16 +618,31 @@ function DefaultNavbar({ routes, brand = "", transparent = false, light = false,
             {renderNavbarItems}
           </MDBox>
           <MDBox display="flex" alignItems="center">
-            <MDBox
-              display="flex"
-              alignItems="center"
-              color={light ? "white" : "inherit"}
-              ml={1}
-              sx={{ cursor: "pointer" }}
-              onClick={handleOpenLanguageMenu}
-            >
-              <Icon fontSize="medium">language</Icon>
-            </MDBox>
+            <Tooltip title="Language" placement="bottom">
+              <MDBox
+                display="flex"
+                alignItems="center"
+                color={light ? "white" : "inherit"}
+                ml={1}
+                sx={{ cursor: "pointer" }}
+                onClick={handleOpenLanguageMenu}
+              >
+                <Icon fontSize="medium">language</Icon>
+              </MDBox>
+            </Tooltip>
+
+            <Tooltip title={darkMode ? "Light Mode" : "Dark Mode"} placement="bottom">
+              <MDBox
+                display="flex"
+                alignItems="center"
+                color={light ? "white" : "inherit"}
+                ml={1}
+                sx={{ cursor: "pointer" }}
+                onClick={handleDarkMode}
+              >
+                <Icon fontSize="medium">{darkMode ? "light_mode" : "dark_mode"}</Icon>
+              </MDBox>
+            </Tooltip>
 
             {action &&
               (action.type === "internal" ? (

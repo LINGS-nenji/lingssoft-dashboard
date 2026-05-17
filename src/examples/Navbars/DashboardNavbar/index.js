@@ -32,6 +32,7 @@ import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Icon from "@mui/material/Icon";
+import Tooltip from "@mui/material/Tooltip";
 
 // Material Dashboard 3 PRO React components
 import MDBox from "components/MDBox";
@@ -60,6 +61,7 @@ import {
   setTransparentNavbar,
   setMiniSidenav,
   setOpenConfigurator,
+  setDarkMode,
 } from "context";
 
 function DashboardNavbar({ absolute = false, light = false, isMini = false }) {
@@ -113,6 +115,7 @@ function DashboardNavbar({ absolute = false, light = false, isMini = false }) {
   const handleCloseMenu = () => setOpenMenu(false);
   const handleOpenLanguageMenu = (event) => setOpenLanguageMenu(event.currentTarget);
   const handleCloseLanguageMenu = () => setOpenLanguageMenu(false);
+  const handleDarkMode = () => setDarkMode(dispatch, !darkMode);
 
   const handleLanguageChange = (lang) => {
     i18n.changeLanguage(lang);
@@ -265,16 +268,29 @@ function DashboardNavbar({ absolute = false, light = false, isMini = false }) {
                   {miniSidenav ? "menu_open" : "menu"}
                 </Icon>
               </IconButton>
-              <IconButton
-                size="small"
-                disableRipple
-                color="inherit"
-                sx={navbarIconButton}
-                onClick={handleOpenLanguageMenu}
-              >
-                <Icon sx={iconsStyle}>language</Icon>
-              </IconButton>
+              <Tooltip title="Language" placement="bottom">
+                <IconButton
+                  size="small"
+                  disableRipple
+                  color="inherit"
+                  sx={navbarIconButton}
+                  onClick={handleOpenLanguageMenu}
+                >
+                  <Icon sx={iconsStyle}>language</Icon>
+                </IconButton>
+              </Tooltip>
               {renderLanguageMenu()}
+              <Tooltip title={darkMode ? "Light Mode" : "Dark Mode"} placement="bottom">
+                <IconButton
+                  size="small"
+                  disableRipple
+                  color="inherit"
+                  sx={navbarIconButton}
+                  onClick={handleDarkMode}
+                >
+                  <Icon sx={iconsStyle}>{darkMode ? "light_mode" : "dark_mode"}</Icon>
+                </IconButton>
+              </Tooltip>
               <IconButton
                 size="small"
                 disableRipple
