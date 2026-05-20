@@ -268,6 +268,17 @@ function DashboardNavbar({ absolute = false, light = false, isMini = false }) {
                   {miniSidenav ? "menu_open" : "menu"}
                 </Icon>
               </IconButton>
+              <Tooltip title={darkMode ? "Light Mode" : "Dark Mode"} placement="bottom">
+                <IconButton
+                  size="small"
+                  disableRipple
+                  color="inherit"
+                  sx={navbarIconButton}
+                  onClick={handleDarkMode}
+                >
+                  <Icon sx={iconsStyle}>{darkMode ? "light_mode" : "dark_mode"}</Icon>
+                </IconButton>
+              </Tooltip>
               <Tooltip title="Language" placement="bottom">
                 <IconButton
                   size="small"
@@ -280,17 +291,6 @@ function DashboardNavbar({ absolute = false, light = false, isMini = false }) {
                 </IconButton>
               </Tooltip>
               {renderLanguageMenu()}
-              <Tooltip title={darkMode ? "Light Mode" : "Dark Mode"} placement="bottom">
-                <IconButton
-                  size="small"
-                  disableRipple
-                  color="inherit"
-                  sx={navbarIconButton}
-                  onClick={handleDarkMode}
-                >
-                  <Icon sx={iconsStyle}>{darkMode ? "light_mode" : "dark_mode"}</Icon>
-                </IconButton>
-              </Tooltip>
               <IconButton
                 size="small"
                 disableRipple

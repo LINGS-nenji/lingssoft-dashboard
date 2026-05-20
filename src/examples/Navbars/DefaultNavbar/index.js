@@ -618,19 +618,6 @@ function DefaultNavbar({ routes, brand = "", transparent = false, light = false,
             {renderNavbarItems}
           </MDBox>
           <MDBox display="flex" alignItems="center">
-            <Tooltip title="Language" placement="bottom">
-              <MDBox
-                display="flex"
-                alignItems="center"
-                color={light ? "white" : "inherit"}
-                ml={1}
-                sx={{ cursor: "pointer" }}
-                onClick={handleOpenLanguageMenu}
-              >
-                <Icon fontSize="medium">language</Icon>
-              </MDBox>
-            </Tooltip>
-
             <Tooltip title={darkMode ? "Light Mode" : "Dark Mode"} placement="bottom">
               <MDBox
                 display="flex"
@@ -641,6 +628,19 @@ function DefaultNavbar({ routes, brand = "", transparent = false, light = false,
                 onClick={handleDarkMode}
               >
                 <Icon fontSize="medium">{darkMode ? "light_mode" : "dark_mode"}</Icon>
+              </MDBox>
+            </Tooltip>
+
+            <Tooltip title="Language" placement="bottom">
+              <MDBox
+                display="flex"
+                alignItems="center"
+                color={light ? "white" : "inherit"}
+                ml={1}
+                sx={{ cursor: "pointer" }}
+                onClick={handleOpenLanguageMenu}
+              >
+                <Icon fontSize="medium">language</Icon>
               </MDBox>
             </Tooltip>
 
