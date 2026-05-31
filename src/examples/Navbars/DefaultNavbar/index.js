@@ -31,7 +31,6 @@ import Icon from "@mui/material/Icon";
 import Popper from "@mui/material/Popper";
 import Grow from "@mui/material/Grow";
 import Grid from "@mui/material/Grid";
-import Tooltip from "@mui/material/Tooltip";
 import Divider from "@mui/material/Divider";
 import MuiLink from "@mui/material/Link";
 import Container from "@mui/material/Container";
@@ -618,31 +617,27 @@ function DefaultNavbar({ routes, brand = "", transparent = false, light = false,
             {renderNavbarItems}
           </MDBox>
           <MDBox display="flex" alignItems="center">
-            <Tooltip title={darkMode ? "Light Mode" : "Dark Mode"} placement="bottom">
-              <MDBox
-                display="flex"
-                alignItems="center"
-                color={light ? "white" : "inherit"}
-                ml={1}
-                sx={{ cursor: "pointer" }}
-                onClick={handleDarkMode}
-              >
-                <Icon fontSize="medium">{darkMode ? "light_mode" : "dark_mode"}</Icon>
-              </MDBox>
-            </Tooltip>
+            <MDBox
+              display="flex"
+              alignItems="center"
+              color={light ? "white" : "inherit"}
+              ml={1}
+              sx={{ cursor: "pointer" }}
+              onClick={handleDarkMode}
+            >
+              <Icon fontSize="medium">{darkMode ? "light_mode" : "dark_mode"}</Icon>
+            </MDBox>
 
-            <Tooltip title="Language" placement="bottom">
-              <MDBox
-                display="flex"
-                alignItems="center"
-                color={light ? "white" : "inherit"}
-                ml={1}
-                sx={{ cursor: "pointer" }}
-                onClick={handleOpenLanguageMenu}
-              >
-                <Icon fontSize="medium">language</Icon>
-              </MDBox>
-            </Tooltip>
+            <MDBox
+              display="flex"
+              alignItems="center"
+              color={light ? "white" : "inherit"}
+              ml={1}
+              sx={{ cursor: "pointer" }}
+              onClick={handleOpenLanguageMenu}
+            >
+              <Icon fontSize="medium">language</Icon>
+            </MDBox>
 
             {action &&
               (action.type === "internal" ? (

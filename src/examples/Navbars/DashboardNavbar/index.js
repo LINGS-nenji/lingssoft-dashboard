@@ -32,7 +32,6 @@ import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Icon from "@mui/material/Icon";
-import Tooltip from "@mui/material/Tooltip";
 
 // Material Dashboard 3 PRO React components
 import MDBox from "components/MDBox";
@@ -268,28 +267,24 @@ function DashboardNavbar({ absolute = false, light = false, isMini = false }) {
                   {miniSidenav ? "menu_open" : "menu"}
                 </Icon>
               </IconButton>
-              <Tooltip title={darkMode ? "Light Mode" : "Dark Mode"} placement="bottom">
-                <IconButton
-                  size="small"
-                  disableRipple
-                  color="inherit"
-                  sx={navbarIconButton}
-                  onClick={handleDarkMode}
-                >
-                  <Icon sx={iconsStyle}>{darkMode ? "light_mode" : "dark_mode"}</Icon>
-                </IconButton>
-              </Tooltip>
-              <Tooltip title="Language" placement="bottom">
-                <IconButton
-                  size="small"
-                  disableRipple
-                  color="inherit"
-                  sx={navbarIconButton}
-                  onClick={handleOpenLanguageMenu}
-                >
-                  <Icon sx={iconsStyle}>language</Icon>
-                </IconButton>
-              </Tooltip>
+              <IconButton
+                size="small"
+                disableRipple
+                color="inherit"
+                sx={navbarIconButton}
+                onClick={handleDarkMode}
+              >
+                <Icon sx={iconsStyle}>{darkMode ? "light_mode" : "dark_mode"}</Icon>
+              </IconButton>
+              <IconButton
+                size="small"
+                disableRipple
+                color="inherit"
+                sx={navbarIconButton}
+                onClick={handleOpenLanguageMenu}
+              >
+                <Icon sx={iconsStyle}>language</Icon>
+              </IconButton>
               {renderLanguageMenu()}
               <IconButton
                 size="small"
