@@ -53,6 +53,9 @@ function reducer(state, action) {
     case "OPEN_CONFIGURATOR": {
       return { ...state, openConfigurator: action.value };
     }
+    case "OPEN_CHATBOT": {
+      return { ...state, openChatbot: action.value };
+    }
     case "DIRECTION": {
       return { ...state, direction: action.value };
     }
@@ -78,6 +81,7 @@ function MaterialUIControllerProvider({ children }) {
     transparentNavbar: true,
     fixedNavbar: true,
     openConfigurator: false,
+    openChatbot: false,
     direction: "ltr",
     layout: "dashboard",
     darkMode: false,
@@ -123,6 +127,8 @@ const setFixedNavbar = (dispatch, value) =>
   dispatch({ type: "FIXED_NAVBAR", value });
 const setOpenConfigurator = (dispatch, value) =>
   dispatch({ type: "OPEN_CONFIGURATOR", value });
+const setOpenChatbot = (dispatch, value) =>
+  dispatch({ type: "OPEN_CHATBOT", value });
 const setDirection = (dispatch, value) =>
   dispatch({ type: "DIRECTION", value });
 const setLayout = (dispatch, value) => dispatch({ type: "LAYOUT", value });
@@ -138,6 +144,7 @@ export {
   setTransparentNavbar,
   setFixedNavbar,
   setOpenConfigurator,
+  setOpenChatbot,
   setDirection,
   setLayout,
   setDarkMode,

@@ -51,11 +51,11 @@ import MDAvatar from "components/MDAvatar";
 import breakpoints from "assets/theme/base/breakpoints";
 
 // Material Dashboard 3 PRO React context
-import { useMaterialUIController, setDarkMode } from "context";
+import { useMaterialUIController, setDarkMode, setOpenChatbot } from "context";
 
 function DefaultNavbar({ routes, brand = "", transparent = false, light = false, action = false }) {
   const [controller, dispatch] = useMaterialUIController();
-  const { darkMode } = controller;
+  const { darkMode, openChatbot } = controller;
 
   const [dropdown, setDropdown] = useState("");
   const [dropdownEl, setDropdownEl] = useState("");
@@ -79,6 +79,7 @@ function DefaultNavbar({ routes, brand = "", transparent = false, light = false,
   };
 
   const handleDarkMode = () => setDarkMode(dispatch, !darkMode);
+  const handleChatbotOpen = () => setOpenChatbot(dispatch, !openChatbot);
 
 
   useEffect(() => {
@@ -637,6 +638,16 @@ function DefaultNavbar({ routes, brand = "", transparent = false, light = false,
               onClick={handleOpenLanguageMenu}
             >
               <Icon fontSize="medium">language</Icon>
+            </MDBox>
+            <MDBox
+              display="flex"
+              alignItems="center"
+              color={light ? "white" : "inherit"}
+              ml={1}
+              sx={{ cursor: "pointer" }}
+              onClick={handleChatbotOpen}
+            >
+              <Icon fontSize="medium">smart_toy</Icon>
             </MDBox>
 
             {action &&

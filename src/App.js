@@ -14,6 +14,7 @@ import MDBox from "components/MDBox";
 // Material Dashboard 3 PRO React examples
 import Sidenav from "examples/Sidenav";
 import Configurator from "examples/Configurator";
+import ChatbotPanel from "examples/ChatbotPanel";
 
 // Material Dashboard 3 PRO React themes
 import theme from "assets/theme";
@@ -36,6 +37,7 @@ import {
   useMaterialUIController,
   setMiniSidenav,
   setOpenConfigurator,
+  setOpenChatbot,
 } from "context";
 
 // Images
@@ -49,6 +51,7 @@ export default function App() {
     direction,
     layout,
     openConfigurator,
+    openChatbot,
     sidenavColor,
     transparentSidenav,
     whiteSidenav,
@@ -87,6 +90,7 @@ export default function App() {
   // Change the openConfigurator state
   const handleConfiguratorOpen = () =>
     setOpenConfigurator(dispatch, !openConfigurator);
+  const handleChatbotOpen = () => setOpenChatbot(dispatch, !openChatbot);
 
   // Setting the dir attribute for the body element
   useEffect(() => {
@@ -118,6 +122,30 @@ export default function App() {
 
       return null;
     });
+
+  const chatbotButton = (
+    <MDBox
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      width="3.25rem"
+      height="3.25rem"
+      bgColor="white"
+      shadow="sm"
+      borderRadius="50%"
+      position="fixed"
+      right="2rem"
+      bottom="6rem"
+      zIndex={99}
+      color="dark"
+      sx={{ cursor: "pointer" }}
+      onClick={handleChatbotOpen}
+    >
+      <Icon fontSize="small" color="inherit">
+        smart_toy
+      </Icon>
+    </MDBox>
+  );
 
   const configsButton = (
     <MDBox
@@ -162,6 +190,8 @@ export default function App() {
               onMouseLeave={handleOnMouseLeave}
             />
             <Configurator />
+            <ChatbotPanel />
+            {chatbotButton}
             {configsButton}
           </>
         )}
@@ -190,6 +220,8 @@ export default function App() {
             onMouseLeave={handleOnMouseLeave}
           />
           <Configurator />
+          <ChatbotPanel />
+          {chatbotButton}
           {configsButton}
         </>
       )}

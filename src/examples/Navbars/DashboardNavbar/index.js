@@ -60,6 +60,7 @@ import {
   setTransparentNavbar,
   setMiniSidenav,
   setOpenConfigurator,
+  setOpenChatbot,
   setDarkMode,
 } from "context";
 
@@ -71,6 +72,7 @@ function DashboardNavbar({ absolute = false, light = false, isMini = false }) {
     transparentNavbar,
     fixedNavbar,
     openConfigurator,
+    openChatbot,
     darkMode,
   } = controller;
   const { i18n } = useTranslation();
@@ -110,6 +112,7 @@ function DashboardNavbar({ absolute = false, light = false, isMini = false }) {
   const handleMiniSidenav = () => setMiniSidenav(dispatch, !miniSidenav);
   const handleConfiguratorOpen = () =>
     setOpenConfigurator(dispatch, !openConfigurator);
+  const handleChatbotOpen = () => setOpenChatbot(dispatch, !openChatbot);
   const handleOpenMenu = (event) => setOpenMenu(event.currentTarget);
   const handleCloseMenu = () => setOpenMenu(false);
   const handleOpenLanguageMenu = (event) => setOpenLanguageMenu(event.currentTarget);
@@ -284,6 +287,15 @@ function DashboardNavbar({ absolute = false, light = false, isMini = false }) {
                 onClick={handleOpenLanguageMenu}
               >
                 <Icon sx={iconsStyle}>language</Icon>
+              </IconButton>
+              <IconButton
+                size="small"
+                disableRipple
+                color="inherit"
+                sx={navbarIconButton}
+                onClick={handleChatbotOpen}
+              >
+                <Icon sx={iconsStyle}>smart_toy</Icon>
               </IconButton>
               {renderLanguageMenu()}
               <IconButton
