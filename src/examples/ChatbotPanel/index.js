@@ -4,7 +4,7 @@
 =========================================================
 */
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Divider from "@mui/material/Divider";
 import Icon from "@mui/material/Icon";
@@ -18,11 +18,28 @@ import ConfiguratorRoot from "examples/Configurator/ConfiguratorRoot";
 
 import { useMaterialUIController, setOpenChatbot } from "context";
 
+const CHATBOT_MESSAGES_STORAGE_KEY = "lingssoft-chatbot-messages";
+
+const getStoredMessages = () => {
+  if (typeof window === "undefined") {
+    return [];
+  }
+
+  try {
+    const storedMessages = window.localStorage.getItem(CHATBOT_MESSAGES_STORAGE_KEY);
+    const parsedMessages = storedMessages ? JSON.parse(storedMessages) : [];
+
+    return Array.isArray(parsedMessages) ? parsedMessages : [];
+  } catch {
+    return [];
+  }
+};
+
 function ChatbotPanel() {
   const [controller, dispatch] = useMaterialUIController();
-  const { openChatbot, darkMode } = controller;
+  const { openChatbot, chatbotSaveHistory, darkMode } = controller;
   const [message, setMessage] = useState("");
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState(() => (chatbotSaveHistory ? getStoredMessages() : []));
 
   const handleCloseChatbot = () => setOpenChatbot(dispatch, false);
   const handleSendMessage = (event) => {
@@ -44,6 +61,19 @@ function ChatbotPanel() {
     ]);
     setMessage("");
   };
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    if (!chatbotSaveHistory) {
+      window.localStorage.removeItem(CHATBOT_MESSAGES_STORAGE_KEY);
+      return;
+    }
+
+    window.localStorage.setItem(CHATBOT_MESSAGES_STORAGE_KEY, JSON.stringify(messages));
+  }, [chatbotSaveHistory, messages]);
 
   return (
     <ConfiguratorRoot variant="permanent" ownerState={{ openConfigurator: openChatbot }}>

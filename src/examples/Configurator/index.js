@@ -52,6 +52,7 @@ import {
   setFixedNavbar,
   setSidenavColor,
   setDarkMode,
+  setChatbotSaveHistory,
 } from "context";
 
 function Configurator() {
@@ -68,6 +69,7 @@ function Configurator() {
     transparentSidenav,
     whiteSidenav,
     darkMode,
+    chatbotSaveHistory,
   } = controller;
   const [disabled, setDisabled] = useState(false);
   const sidenavColors = [
@@ -111,6 +113,8 @@ function Configurator() {
   };
   const handleMiniSidenav = () => setMiniSidenav(dispatch, !miniSidenav);
   const handleFixedNavbar = () => setFixedNavbar(dispatch, !fixedNavbar);
+  const handleChatbotSaveHistory = () =>
+    setChatbotSaveHistory(dispatch, !chatbotSaveHistory);
   const handleDarkMode = () => {
     setDarkMode(dispatch, !darkMode);
     handleDarkSidenav();
@@ -392,6 +396,18 @@ function Configurator() {
 
 
           <Switch checked={darkMode} onChange={handleDarkMode} />
+        </MDBox>
+        <Divider />
+        <MDBox
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+          lineHeight={1}
+        >
+          <MDTypography variant="h6">{t("chatbotSaveHistory")}</MDTypography>
+
+
+          <Switch checked={chatbotSaveHistory} onChange={handleChatbotSaveHistory} />
         </MDBox>
         <Divider />
 

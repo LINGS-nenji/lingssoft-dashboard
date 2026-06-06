@@ -29,6 +29,16 @@ const MaterialUI = createContext();
 // Setting custom name for the context which is visible on react dev tools
 MaterialUI.displayName = "MaterialUIContext";
 
+const getStoredBoolean = (key, defaultValue) => {
+  if (typeof window === "undefined") {
+    return defaultValue;
+  }
+
+  const storedValue = window.localStorage.getItem(key);
+
+  return storedValue === null ? defaultValue : storedValue === "true";
+};
+
 // Material Dashboard 3 PRO React reducer
 function reducer(state, action) {
   switch (action.type) {
@@ -56,6 +66,9 @@ function reducer(state, action) {
     case "OPEN_CHATBOT": {
       return { ...state, openChatbot: action.value };
     }
+    case "CHATBOT_SAVE_HISTORY": {
+      return { ...state, chatbotSaveHistory: action.value };
+    }
     case "DIRECTION": {
       return { ...state, direction: action.value };
     }
@@ -82,6 +95,7 @@ function MaterialUIControllerProvider({ children }) {
     fixedNavbar: true,
     openConfigurator: false,
     openChatbot: false,
+    chatbotSaveHistory: getStoredBoolean("lingssoft-chatbot-save-history", true),
     direction: "ltr",
     layout: "dashboard",
     darkMode: false,
@@ -129,6 +143,13 @@ const setOpenConfigurator = (dispatch, value) =>
   dispatch({ type: "OPEN_CONFIGURATOR", value });
 const setOpenChatbot = (dispatch, value) =>
   dispatch({ type: "OPEN_CHATBOT", value });
+const setChatbotSaveHistory = (dispatch, value) => {
+  if (typeof window !== "undefined") {
+    window.localStorage.setItem("lingssoft-chatbot-save-history", value);
+  }
+
+  dispatch({ type: "CHATBOT_SAVE_HISTORY", value });
+};
 const setDirection = (dispatch, value) =>
   dispatch({ type: "DIRECTION", value });
 const setLayout = (dispatch, value) => dispatch({ type: "LAYOUT", value });
@@ -145,6 +166,7 @@ export {
   setFixedNavbar,
   setOpenConfigurator,
   setOpenChatbot,
+  setChatbotSaveHistory,
   setDirection,
   setLayout,
   setDarkMode,

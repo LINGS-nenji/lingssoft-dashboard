@@ -10,5 +10,6 @@
   "navbarFixed": "Navbar Fixed",
   "sidenavMini": "Sidenav Mini",
   "lightDark": "Light / Dark",
-  "language": "Language Selection"
+  "language": "Language Selection",
+  "chatbotSaveHistory": "Save chat history"
 }
