@@ -12,5 +12,6 @@
   "lightDark": "Light / Dark",
   "language": "Language Selection",
   "chatbotSaveHistory": "Save chat history",
-  "chatbotAiUrl": "AI URL"
+  "chatbotAiUrl": "AI URL",
+  "chatbotSettings": "AI Chatbot"
 }

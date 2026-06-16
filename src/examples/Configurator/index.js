@@ -402,26 +402,26 @@ function Configurator() {
           <Switch checked={darkMode} onChange={handleDarkMode} />
         </MDBox>
         <Divider />
-        <MDBox mt={2} mb={2}>
-          <MDInput
-            type="text"
-            label={t("chatbotAiUrl")}
-            value={chatbotAiUrl}
-            onChange={handleChatbotAiUrl}
-            fullWidth
-          />
-        </MDBox>
-        <Divider />
-        <MDBox
-          display="flex"
-          justifyContent="space-between"
-          alignItems="center"
-          lineHeight={1}
-        >
-          <MDTypography variant="h6">{t("chatbotSaveHistory")}</MDTypography>
-
-
-          <Switch checked={chatbotSaveHistory} onChange={handleChatbotSaveHistory} />
+        <MDBox mt={3} mb={2}>
+          <MDTypography variant="h6">{t("chatbotSettings")}</MDTypography>
+          <MDBox mt={2} mb={2}>
+            <MDInput
+              type="text"
+              label={t("chatbotAiUrl")}
+              value={chatbotAiUrl}
+              onChange={handleChatbotAiUrl}
+              fullWidth
+            />
+          </MDBox>
+          <MDBox
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+            lineHeight={1}
+          >
+            <MDTypography variant="h6">{t("chatbotSaveHistory")}</MDTypography>
+            <Switch checked={chatbotSaveHistory} onChange={handleChatbotSaveHistory} />
+          </MDBox>
         </MDBox>
         <Divider />
 

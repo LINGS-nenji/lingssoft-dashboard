@@ -12,5 +12,6 @@
   "lightDark": "라이트 / 다크",
   "language": "언어 선택",
   "chatbotSaveHistory": "채팅 내용 저장",
-  "chatbotAiUrl": "AI URL"
+  "chatbotAiUrl": "AI URL",
+  "chatbotSettings": "AI 쳇봇"
 }
