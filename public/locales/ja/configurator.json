@@ -12,6 +12,6 @@
   "lightDark": "ライト / ダーク",
   "language": "言語選択",
   "chatbotSaveHistory": "チャット履歴を保存",
-  "chatbotAiUrl": "AI URL",
+  "chatbotAiUrl": "API URL",
   "chatbotSettings": "AI チャットボット"
 }
