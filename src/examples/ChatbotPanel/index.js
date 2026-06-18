@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import Divider from "@mui/material/Divider";
 import Icon from "@mui/material/Icon";
 import IconButton from "@mui/material/IconButton";
+import CircularProgress from "@mui/material/CircularProgress";
 
 import MDBox from "components/MDBox";
 import MDInput from "components/MDInput";
@@ -37,29 +38,72 @@ const getStoredMessages = () => {
 
 function ChatbotPanel() {
   const [controller, dispatch] = useMaterialUIController();
-  const { openChatbot, chatbotSaveHistory, darkMode } = controller;
+  const { openChatbot, chatbotSaveHistory, darkMode, pageContext, chatbotAiUrl } = controller;
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState(() => (chatbotSaveHistory ? getStoredMessages() : []));
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleCloseChatbot = () => setOpenChatbot(dispatch, false);
-  const handleSendMessage = (event) => {
+  const handleSendMessage = async (event) => {
     event.preventDefault();
 
     const nextMessage = message.trim();
 
-    if (!nextMessage) {
+    if (!nextMessage || isLoading) {
       return;
     }
 
-    setMessages((currentMessages) => [
-      ...currentMessages,
-      {
-        id: Date.now(),
-        role: "user",
-        content: nextMessage,
-      },
-    ]);
+    const newUserMessage = {
+      id: Date.now(),
+      role: "user",
+      content: nextMessage,
+    };
+
+    setMessages((currentMessages) => [...currentMessages, newUserMessage]);
     setMessage("");
+    setIsLoading(true);
+
+    try {
+      const payload = {
+        pageContext,
+        chatHistory: [...messages, newUserMessage].map(({ role, content }) => ({ role, content })),
+      };
+
+      const aiEndpoint = chatbotAiUrl || "http://localhost:5000/api/chat";
+
+      const response = await fetch(aiEndpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch response");
+      }
+
+      const data = await response.json();
+
+      setMessages((currentMessages) => [
+        ...currentMessages,
+        {
+          id: Date.now() + 1,
+          role: "assistant",
+          content: data.answer || "답변을 받아왔습니다.",
+        },
+      ]);
+    } catch (error) {
+      console.error("Chatbot API Error:", error);
+      setMessages((currentMessages) => [
+        ...currentMessages,
+        {
+          id: Date.now() + 1,
+          role: "assistant",
+          content: "API 호출 중 오류가 발생했습니다. 백엔드 서버 연결을 확인해주세요.",
+        },
+      ]);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -124,23 +168,33 @@ function ChatbotPanel() {
           })}
         >
           {messages.length ? (
-            messages.map(({ id, content }) => (
-              <MDBox
-                key={id}
-                alignSelf="flex-end"
-                maxWidth="85%"
-                bgColor="info"
-                borderRadius="lg"
-                px={2}
-                py={1.25}
-                mb={1}
-                coloredShadow="info"
-              >
-                <MDTypography variant="button" color="white">
-                  {content}
-                </MDTypography>
-              </MDBox>
-            ))
+            <>
+              {messages.map(({ id, role, content }) => {
+                const isUser = role === "user";
+                return (
+                  <MDBox
+                    key={id}
+                    alignSelf={isUser ? "flex-end" : "flex-start"}
+                    maxWidth="85%"
+                    bgColor={isUser ? "info" : (darkMode ? "dark" : "light")}
+                    borderRadius="lg"
+                    px={2}
+                    py={1.25}
+                    mb={1}
+                    coloredShadow={isUser ? "info" : "none"}
+                  >
+                    <MDTypography variant="button" color={isUser ? "white" : (darkMode ? "white" : "dark")}>
+                      {content}
+                    </MDTypography>
+                  </MDBox>
+                );
+              })}
+              {isLoading && (
+                <MDBox alignSelf="flex-start" mt={1}>
+                  <CircularProgress size={20} color="info" />
+                </MDBox>
+              )}
+            </>
           ) : (
             <>
               <MDBox
