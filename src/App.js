@@ -219,12 +219,12 @@ export default function App() {
               onMouseLeave={handleOnMouseLeave}
             />
             <Configurator />
-            <ChatbotPanel />
             {chatbotButton}
             {configsButton}
           </>
         )}
         {layout === "vr" && <Configurator />}
+        <ChatbotPanel />
         <Routes>
           {getRoutes(routes)}
           <Route path="*" element={<Navigate to="/dashboards/analytics" />} />
@@ -249,12 +249,12 @@ export default function App() {
             onMouseLeave={handleOnMouseLeave}
           />
           <Configurator />
-          <ChatbotPanel />
           {chatbotButton}
           {configsButton}
         </>
       )}
       {layout === "vr" && <Configurator />}
+      <ChatbotPanel />
       <Routes>
         {getRoutes(routes)}
         <Route path="*" element={<Navigate to="/dashboards/analytics" />} />
