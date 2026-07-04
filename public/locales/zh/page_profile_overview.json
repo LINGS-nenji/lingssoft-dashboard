@@ -1,3 +1,20 @@
 {
-  "title": "profile_overview Page"
+  "profile_info_title": "个人资料信息",
+  "profile_info_desc": "Hi, I’m Alec Thompson, Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality). (translated)",
+  "conversations": "对话",
+  "projects": "项目",
+  "architects_design_houses": "建筑师设计房屋",
+  "project_1_label": "项目 #1",
+  "project_1_title": "斯堪的纳维亚",
+  "project_1_desc": "Music is something that everyone has their own specific opinion about. (translated)",
+  "project_2_label": "项目 #2",
+  "project_2_title": "现代",
+  "project_2_desc": "As Uber works through a huge amount of internal management turmoil. (translated)",
+  "project_3_label": "项目 #3",
+  "project_3_title": "极简",
+  "project_3_desc": "Different people have different taste, and various types of music. (translated)",
+  "project_4_label": "项目 #4",
+  "project_4_title": "哥特式",
+  "project_4_desc": "Why would anyone pick blue over pink? Pink is obviously a better color. (translated)",
+  "view_project": "查看项目"
 }

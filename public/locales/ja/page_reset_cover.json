@@ -1,3 +1,6 @@
 {
-  "title": "reset_cover Page"
+  "reset_pwd_title": "パスワードをリセット",
+  "reset_pwd_desc": "最大60秒でメールが届きます",
+  "email": "メールアドレス",
+  "reset_btn": "リセット"
 }

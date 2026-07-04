@@ -1,3 +1,12 @@
 {
-  "title": "sign_up_cover Page"
+  "join_us": "今すぐ参加",
+  "enter_details": "登録するにはメールアドレスとパスワードを入力してください",
+  "name": "名前",
+  "email": "メールアドレス",
+  "password": "パスワード",
+  "i_agree": "同意する",
+  "terms": "利用規約",
+  "sign_up_button": "サインアップ",
+  "already_have": "すでにアカウントをお持ちですか？",
+  "sign_in": "Sign In (translated)"
 }

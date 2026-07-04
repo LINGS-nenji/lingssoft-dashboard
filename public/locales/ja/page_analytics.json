@@ -1,3 +1,19 @@
 {
-  "title": "analytics Page"
+  "title": "アナリティクス",
+  "subtitle": "国別の売上、価値、直帰率を確認します。",
+  "website_views": "ウェブサイトビュー",
+  "last_campaign": "前回のキャンペーンのパフォーマンス",
+  "campaign_sent": "2日前に送信されたキャンペーン",
+  "daily_sales": "毎日の売上",
+  "increase_today": "今日の売上の増加。",
+  "updated_4_min": "4分前に更新",
+  "completed_tasks": "完了したタスク",
+  "just_updated": "更新されたばかり",
+  "bookings": "予約",
+  "than_last_week": "先週より",
+  "todays_users": "今日のユーザー",
+  "than_last_month": "先月より",
+  "revenue": "収益",
+  "than_yesterday": "昨日より",
+  "followers": "フォロワー"
 }

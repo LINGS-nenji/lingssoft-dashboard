@@ -1,3 +1,12 @@
 {
-  "title": "sign_up_cover Page"
+  "join_us": "今天就加入我们",
+  "enter_details": "输入您的电子邮件和密码以注册",
+  "name": "名称",
+  "email": "电子邮件",
+  "password": "密码",
+  "i_agree": "我同意",
+  "terms": "条款和条件",
+  "sign_up_button": "注册",
+  "already_have": "已经有帐户？",
+  "sign_in": "Sign In (translated)"
 }

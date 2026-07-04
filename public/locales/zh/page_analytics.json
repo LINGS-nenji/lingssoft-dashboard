@@ -1,3 +1,19 @@
 {
-  "title": "analytics Page"
+  "title": "分析",
+  "subtitle": "按国家检查销售额，价值和跳出率。",
+  "website_views": "网站浏览量",
+  "last_campaign": "上次活动表现",
+  "campaign_sent": "两天前发送的活动",
+  "daily_sales": "每日销售额",
+  "increase_today": "今日销售额增加。",
+  "updated_4_min": "4分钟前更新",
+  "completed_tasks": "已完成任务",
+  "just_updated": "刚刚更新",
+  "bookings": "预订",
+  "than_last_week": "比上周",
+  "todays_users": "今日用户",
+  "than_last_month": "比上个月",
+  "revenue": "收入",
+  "than_yesterday": "比昨天",
+  "followers": "粉丝"
 }

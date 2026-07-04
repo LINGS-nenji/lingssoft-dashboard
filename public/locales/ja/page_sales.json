@@ -1,3 +1,13 @@
 {
-  "title": "sales Page"
+  "sales": "売上",
+  "since_last_month": "先月から",
+  "customers": "お客様",
+  "avg_revenue": "平均収益",
+  "revenue": "収益",
+  "facebook_ads": "Facebook広告",
+  "google_ads": "Google広告",
+  "ads_performance_tooltip": "どの広告のパフォーマンスが良いか確認する",
+  "sales_by_age": "年齢別の売上",
+  "sales_by_country": "国別の売上",
+  "top_selling": "トップセラー商品"
 }

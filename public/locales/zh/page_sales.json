@@ -1,3 +1,13 @@
 {
-  "title": "sales Page"
+  "sales": "销售额",
+  "since_last_month": "自上个月起",
+  "customers": "客户",
+  "avg_revenue": "平均收入",
+  "revenue": "收入",
+  "facebook_ads": "Facebook广告",
+  "google_ads": "Google广告",
+  "ads_performance_tooltip": "看看哪些广告效果更好",
+  "sales_by_age": "按年龄销售",
+  "sales_by_country": "按国家销售",
+  "top_selling": "畅销产品"
 }

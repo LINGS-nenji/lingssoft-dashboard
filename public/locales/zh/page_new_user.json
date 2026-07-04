@@ -1,3 +1,32 @@
 {
-  "title": "new_user Page"
+  "step_1": "用户信息",
+  "step_2": "地址",
+  "step_3": "社交",
+  "step_4": "个人资料",
+  "btn_back": "返回",
+  "btn_next": "下一步",
+  "btn_send": "发送",
+  "form": {
+    "firstName": "First Name (translated)",
+    "lastName": "Last Name (translated)",
+    "company": "Company (translated)",
+    "email": "Email Address (translated)",
+    "password": "密码",
+    "repeatPassword": "Repeat Password (translated)",
+    "address1": "Address 1 (translated)",
+    "address2": "Address 2 (translated)",
+    "city": "City (translated)",
+    "state": "State (translated)",
+    "zip": "Zip (translated)",
+    "twitter": "Twitter Handle (translated)",
+    "facebook": "Facebook Account (translated)",
+    "instagram": "Instagram Account (translated)",
+    "publicEmail": "Public Email (translated)",
+    "bio": "Bio (translated)",
+    "about_me": "About me (translated)",
+    "mandatory": "Mandatory informations (translated)",
+    "address_title": "地址",
+    "socials_title": "Socials (translated)",
+    "profile_title": "个人资料"
+  }
 }

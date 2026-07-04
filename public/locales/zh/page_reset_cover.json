@@ -1,3 +1,6 @@
 {
-  "title": "reset_cover Page"
+  "reset_pwd_title": "重置密码",
+  "reset_pwd_desc": "您将在最多60秒内收到一封电子邮件",
+  "email": "电子邮件",
+  "reset_btn": "重置"
 }

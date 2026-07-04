@@ -1,3 +1,10 @@
 {
-  "title": "sign_in_cover Page"
+  "sign_in": "登录",
+  "email": "电子邮件",
+  "password": "密码",
+  "remember_me": "记住我",
+  "sign_in_button": "登录",
+  "no_account": "还没有帐户？",
+  "sign_up": "注册",
+  "sign_in_desc": "输入您的电子邮件和密码以登录"
 }
