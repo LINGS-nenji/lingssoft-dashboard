@@ -16,6 +16,7 @@ Coded by www.creative-tim.com
 // @mui material components
 import Card from "@mui/material/Card";
 
+import { useTranslation } from "react-i18next";
 // Material Dashboard 3 PRO React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
@@ -25,15 +26,13 @@ import MDButton from "components/MDButton";
 import Invoice from "layouts/pages/account/billing/components/Invoice";
 
 function Invoices() {
+  const { t } = useTranslation("page_billing");
+
   return (
     <Card sx={{ height: "100%" }}>
       <MDBox pt={2} px={2} display="flex" justifyContent="space-between" alignItems="center">
-        <MDTypography variant="h6" fontWeight="medium">
-          Invoices
-        </MDTypography>
-        <MDButton variant="outlined" color="info" size="small">
-          view all
-        </MDButton>
+        <MDTypography variant="h6" fontWeight="medium">{t("invoices")}</MDTypography>
+        <MDButton variant="outlined" color="info" size="small">{t("view_all")}</MDButton>
       </MDBox>
       <MDBox p={2}>
         <MDBox component="ul" display="flex" flexDirection="column" p={0} m={0}>

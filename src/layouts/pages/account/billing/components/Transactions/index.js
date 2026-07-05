@@ -15,6 +15,7 @@ Coded by www.creative-tim.com
 
 // @mui material components
 import Card from "@mui/material/Card";
+import { useTranslation } from "react-i18next";
 // import Divider from "@mui/material/Divider";
 import Icon from "@mui/material/Icon";
 
@@ -27,12 +28,12 @@ import MDTypography from "components/MDTypography";
 import Transaction from "layouts/pages/account/billing/components/Transaction";
 
 function Transactions() {
+  const { t } = useTranslation("page_billing");
+
   return (
     <Card sx={{ height: "100%" }}>
       <MDBox display="flex" justifyContent="space-between" alignItems="center" pt={3} px={2}>
-        <MDTypography variant="h6" fontWeight="medium" textTransform="capitalize">
-          Your Transaction&apos;s
-        </MDTypography>
+        <MDTypography variant="h6" fontWeight="medium" textTransform="capitalize">{t("your_transactions")}</MDTypography>
         <MDBox display="flex" alignItems="flex-start">
           <MDBox color="text" mr={0.5} lineHeight={0}>
             <Icon color="inherit" fontSize="small">
@@ -46,9 +47,7 @@ function Transactions() {
       </MDBox>
       <MDBox pt={3} pb={2} px={2}>
         <MDBox mb={2}>
-          <MDTypography variant="caption" color="text" fontWeight="bold" textTransform="uppercase">
-            newest
-          </MDTypography>
+          <MDTypography variant="caption" color="text" fontWeight="bold" textTransform="uppercase">{t("newest")}</MDTypography>
         </MDBox>
         <MDBox
           component="ul"
@@ -74,9 +73,7 @@ function Transactions() {
           />
         </MDBox>
         <MDBox mt={1} mb={2}>
-          <MDTypography variant="caption" color="text" fontWeight="bold" textTransform="uppercase">
-            yesterday
-          </MDTypography>
+          <MDTypography variant="caption" color="text" fontWeight="bold" textTransform="uppercase">{t("yesterday")}</MDTypography>
         </MDBox>
         <MDBox
           component="ul"
@@ -112,7 +109,7 @@ function Transactions() {
             icon="priority_high"
             name="Webflow"
             description="26 March 2020, at 05:00 AM"
-            value="Pending"
+            value={t("pending")}
           />
         </MDBox>
       </MDBox>

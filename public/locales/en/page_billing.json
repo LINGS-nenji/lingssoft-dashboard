@@ -1,3 +1,21 @@
 {
-  "title": "billing Page"
+  "salary": "salary",
+  "belong_interactive": "Belong Interactive",
+  "paypal": "paypal",
+  "freelance_payment": "Freelance Payment",
+  "payment_method": "Payment Method",
+  "add_new_card": "+ add new card",
+  "invoices": "Invoices",
+  "view_all": "view all",
+  "pdf": "pdf",
+  "billing_information": "Billing Information",
+  "company_name": "Company Name:",
+  "email_address": "Email Address:",
+  "vat_number": "VAT Number:",
+  "delete": "delete",
+  "edit": "edit",
+  "your_transactions": "Your Transaction's",
+  "newest": "newest",
+  "yesterday": "yesterday",
+  "pending": "Pending"
 }

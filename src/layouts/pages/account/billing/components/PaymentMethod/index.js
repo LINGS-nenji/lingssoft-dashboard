@@ -15,6 +15,7 @@ Coded by www.creative-tim.com
 
 // @mui material components
 import Card from "@mui/material/Card";
+import { useTranslation } from "react-i18next";
 import Grid from "@mui/material/Grid";
 import Icon from "@mui/material/Icon";
 import Tooltip from "@mui/material/Tooltip";
@@ -32,15 +33,15 @@ import visaLogo from "assets/images/logos/visa.png";
 import { useMaterialUIController } from "context";
 
 function PaymentMethod() {
+  const { t } = useTranslation("page_billing");
+
   const [controller] = useMaterialUIController();
   const { darkMode } = controller;
 
   return (
     <Card id="delete-account">
       <MDBox pt={2} px={2} display="flex" justifyContent="space-between" alignItems="center">
-        <MDTypography variant="h6" fontWeight="medium">
-          Payment Method
-        </MDTypography>
+        <MDTypography variant="h6" fontWeight="medium">{t("payment_method")}</MDTypography>
         <MDButton variant="gradient" color="dark">
           <Icon sx={{ fontWeight: "bold" }}>add</Icon>
           &nbsp;add new card

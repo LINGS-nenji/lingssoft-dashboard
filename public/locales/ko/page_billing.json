@@ -1,3 +1,21 @@
 {
-  "title": "billing 페이지"
+  "salary": "급여",
+  "belong_interactive": "Belong Interactive",
+  "paypal": "페이팔",
+  "freelance_payment": "프리랜서 결제",
+  "payment_method": "결제 수단",
+  "add_new_card": "+ 새 카드 추가",
+  "invoices": "청구서",
+  "view_all": "모두 보기",
+  "pdf": "pdf",
+  "billing_information": "청구 정보",
+  "company_name": "회사명:",
+  "email_address": "이메일 주소:",
+  "vat_number": "VAT 번호:",
+  "delete": "삭제",
+  "edit": "편집",
+  "your_transactions": "내 거래 내역",
+  "newest": "최신",
+  "yesterday": "어제",
+  "pending": "대기 중"
 }

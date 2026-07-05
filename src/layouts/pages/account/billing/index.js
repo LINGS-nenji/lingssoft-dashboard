@@ -16,6 +16,7 @@ Coded by www.creative-tim.com
 // @mui material components
 import Grid from "@mui/material/Grid";
 
+import { useTranslation } from "react-i18next";
 // Material Dashboard 3 PRO React components
 import MDBox from "components/MDBox";
 
@@ -31,6 +32,8 @@ import BillingInformation from "layouts/pages/account/billing/components/Billing
 import Transactions from "layouts/pages/account/billing/components/Transactions";
 
 function Billing() {
+  const { t } = useTranslation("page_billing");
+
   return (
     <BaseLayout stickyNavbar>
       <MDBox mt={4}>
@@ -44,16 +47,16 @@ function Billing() {
                 <Grid item xs={12} md={6} xl={3}>
                   <DefaultInfoCard
                     icon="account_balance"
-                    title="salary"
-                    description="Belong Interactive"
+                    title={t("salary")}
+                    description={t("belong_interactive")}
                     value="+$2000"
                   />
                 </Grid>
                 <Grid item xs={12} md={6} xl={3}>
                   <DefaultInfoCard
                     icon="paypal"
-                    title="paypal"
-                    description="Freelance Payment"
+                    title={t("paypal")}
+                    description={t("freelance_payment")}
                     value="$455.00"
                   />
                 </Grid>

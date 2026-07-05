@@ -16,6 +16,7 @@ Coded by www.creative-tim.com
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
+import { useTranslation } from "react-i18next";
 // @mui material components
 import Icon from "@mui/material/Icon";
 
@@ -28,6 +29,8 @@ import MDButton from "components/MDButton";
 import { useMaterialUIController } from "context";
 
 function Bill({ name, company, email, vat, noGutter = false }) {
+  const { t } = useTranslation("page_billing");
+
   const [controller] = useMaterialUIController();
   const { darkMode } = controller;
 
@@ -58,17 +61,17 @@ function Bill({ name, company, email, vat, noGutter = false }) {
           <MDBox display="flex" alignItems="center" mt={{ xs: 2, sm: 0 }} ml={{ xs: -1.5, sm: 0 }}>
             <MDBox mr={1}>
               <MDButton variant="text" color="error">
-                <Icon>delete</Icon>&nbsp;delete
+                <Icon>delete</Icon>&nbsp;{t("delete")}
               </MDButton>
             </MDBox>
             <MDButton variant="text" color={darkMode ? "white" : "dark"}>
-              <Icon>edit</Icon>&nbsp;edit
+              <Icon>edit</Icon>&nbsp;{t("edit")}
             </MDButton>
           </MDBox>
         </MDBox>
         <MDBox mb={1} lineHeight={0}>
           <MDTypography variant="caption" color="text">
-            Company Name:&nbsp;&nbsp;&nbsp;
+            {t("company_name")}&nbsp;&nbsp;&nbsp;
             <MDTypography variant="caption" fontWeight="medium" textTransform="capitalize">
               {company}
             </MDTypography>
@@ -76,14 +79,14 @@ function Bill({ name, company, email, vat, noGutter = false }) {
         </MDBox>
         <MDBox mb={1} lineHeight={0}>
           <MDTypography variant="caption" color="text">
-            Email Address:&nbsp;&nbsp;&nbsp;
+            {t("email_address")}&nbsp;&nbsp;&nbsp;
             <MDTypography variant="caption" fontWeight="medium">
               {email}
             </MDTypography>
           </MDTypography>
         </MDBox>
         <MDTypography variant="caption" color="text">
-          VAT Number:&nbsp;&nbsp;&nbsp;
+          {t("vat_number")}&nbsp;&nbsp;&nbsp;
           <MDTypography variant="caption" fontWeight="medium">
             {vat}
           </MDTypography>

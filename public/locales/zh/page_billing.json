@@ -1,3 +1,21 @@
 {
-  "title": "billing Page"
+  "salary": "薪水",
+  "belong_interactive": "Belong Interactive",
+  "paypal": "贝宝",
+  "freelance_payment": "自由职业者付款",
+  "payment_method": "付款方式",
+  "add_new_card": "+ 添加新卡",
+  "invoices": "发票",
+  "view_all": "查看全部",
+  "pdf": "pdf",
+  "billing_information": "账单信息",
+  "company_name": "公司名称:",
+  "email_address": "电子邮件地址:",
+  "vat_number": "增值税号:",
+  "delete": "删除",
+  "edit": "编辑",
+  "your_transactions": "您的交易",
+  "newest": "最新",
+  "yesterday": "昨天",
+  "pending": "待定"
 }
