@@ -18,6 +18,7 @@ import Divider from "@mui/material/Divider";
 import Icon from "@mui/material/Icon";
 import Tooltip from "@mui/material/Tooltip";
 
+import { useTranslation } from "react-i18next";
 // Material Dashboard 3 PRO React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
@@ -32,6 +33,7 @@ import team4 from "assets/images/team-4.jpg";
 import team5 from "assets/images/team-5.jpg";
 
 function Header() {
+  const { t } = useTranslation("page_calendar");
   const avatarStyles = {
     border: ({ borders: { borderWidth }, palette: { white } }) =>
       `${borderWidth[2]} solid ${white.main}`,
@@ -49,7 +51,7 @@ function Header() {
       <MDBox mt={0.5} pr={1}>
         <MDBox mb={1} ml={-1.25} lineHeight={0}>
           <MDTypography variant="button" color="secondary">
-            Team members:
+            {t("team_members")}
           </MDTypography>
         </MDBox>
         <MDBox display="flex">

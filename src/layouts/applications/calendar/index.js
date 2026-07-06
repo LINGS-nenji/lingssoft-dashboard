@@ -13,6 +13,7 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 
 // @mui material components
 import Grid from "@mui/material/Grid";
@@ -35,6 +36,14 @@ import ProductivityChart from "layouts/applications/calendar/components/Producti
 import calendarEventsData from "layouts/applications/calendar/data/calendarEventsData";
 
 function Calendar() {
+  const { t } = useTranslation("page_calendar");
+  const translatedEventsData = useMemo(() => {
+    return calendarEventsData.map((event) => ({
+      ...event,
+      title: t(event.title),
+    }));
+  }, [t]);
+
   return (
     <DashboardLayout>
       <DashboardNavbar />
@@ -49,12 +58,12 @@ function Calendar() {
                 <EventCalendar
                   initialView="dayGridMonth"
                   initialDate="2021-08-10"
-                  events={calendarEventsData}
+                  events={translatedEventsData}
                   selectable
                   editable
                 />
               ),
-              [calendarEventsData]
+              [translatedEventsData]
             )}
           </Grid>
           <Grid item xs={12} xl={3}>

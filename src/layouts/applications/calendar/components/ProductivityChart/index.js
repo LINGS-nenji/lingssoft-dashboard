@@ -35,6 +35,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Icon from "@mui/material/Icon";
 
+import { useTranslation } from "react-i18next";
 // Material Dashboard 3 PRO React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
@@ -57,6 +58,7 @@ ChartJS.register(
 );
 
 function ProductivityChart() {
+  const { t } = useTranslation("page_calendar");
   const { size } = typography;
   const chartRef = useRef(null);
   const [openMenu, setOpenMenu] = useState(null);
@@ -77,9 +79,9 @@ function ProductivityChart() {
       onClose={handleCloseMenu}
       keepMounted
     >
-      <MenuItem onClick={handleCloseMenu}>Action</MenuItem>
-      <MenuItem onClick={handleCloseMenu}>Anoter action</MenuItem>
-      <MenuItem onClick={handleCloseMenu}>Something else here</MenuItem>
+      <MenuItem onClick={handleCloseMenu}>{t("action")}</MenuItem>
+      <MenuItem onClick={handleCloseMenu}>{t("another_action")}</MenuItem>
+      <MenuItem onClick={handleCloseMenu}>{t("something_else_here")}</MenuItem>
     </Menu>
   );
 
@@ -92,16 +94,16 @@ function ProductivityChart() {
           <MDBox display="flex" justifyContent="space-between">
             <MDBox>
               <MDTypography variant="h6" fontWeight="medium" color="white">
-                Productivity
+                {t("productivity")}
               </MDTypography>
               <MDBox display="flex" alignItems="center">
                 <MDBox fontSize={size.lg} color="success" mb={0.3} mr={0.5} lineHeight={0}>
                   <Icon sx={{ fontWeight: "bold" }}>arrow_upward</Icon>
                 </MDBox>
                 <MDTypography variant="button" color="white" fontWeight="medium">
-                  4% more{" "}
+                  {t("4_more")}
                   <MDTypography variant="button" color="white">
-                    in 2021
+                    {t("in_2021")}
                   </MDTypography>
                 </MDTypography>
               </MDBox>

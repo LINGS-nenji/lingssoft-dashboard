@@ -15,56 +15,56 @@ Coded by www.creative-tim.com
 
 const calendarEventsData = [
   {
-    title: "All day conference",
+    title: "all_day_conference",
     start: "2021-08-01",
     end: "2021-08-01",
     className: "success",
   },
 
   {
-    title: "Meeting with Mary",
+    title: "meeting_with_mary",
     start: "2021-08-03",
     end: "2021-08-03",
     className: "info",
   },
 
   {
-    title: "Cyber Week",
+    title: "cyber_week",
     start: "2021-08-04",
     end: "2021-08-04",
     className: "warning",
   },
 
   {
-    title: "Winter Hackaton",
+    title: "winter_hackaton",
     start: "2021-08-05",
     end: "2021-08-05",
     className: "error",
   },
 
   {
-    title: "Digital event",
+    title: "digital_event",
     start: "2021-08-09",
     end: "2021-08-11",
     className: "warning",
   },
 
   {
-    title: "Marketing event",
+    title: "marketing_event",
     start: "2021-08-12",
     end: "2021-08-12",
     className: "primary",
   },
 
   {
-    title: "Dinner with Family",
+    title: "dinner_with_family",
     start: "2021-08-21",
     end: "2021-08-21",
     className: "error",
   },
 
   {
-    title: "Black Friday",
+    title: "black_friday",
     start: "2021-08-25",
     end: "2021-08-25",
     className: "info",
