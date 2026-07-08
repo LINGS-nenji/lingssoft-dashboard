@@ -13,6 +13,9 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 // @mui material components
 import Grid from "@mui/material/Grid";
 
@@ -24,32 +27,33 @@ import MDTypography from "components/MDTypography";
 import FormField from "layouts/applications/wizard/components/FormField";
 
 function Address() {
+  const { t } = useTranslation("page_wizard");
+
   return (
     <MDBox>
       <MDBox width="80%" textAlign="center" mx="auto" my={4}>
         <MDBox mb={1}>
           <MDTypography variant="h5" fontWeight="regular">
-            Are you living in a nice area?
+            {t("address_title")}
           </MDTypography>
         </MDBox>
         <MDTypography variant="body2" color="text">
-          One thing I love about the later sunsets is the chance to go for a walk through the
-          neighborhood woods before dinner
+          {t("address_desc")}
         </MDTypography>
       </MDBox>
       <MDBox mt={2}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={8}>
-            <FormField type="text" label="Street Name" InputLabelProps={{ shrink: true }} />
+            <FormField type="text" label={t("street_name")} InputLabelProps={{ shrink: true }} />
           </Grid>
           <Grid item xs={12} md={4}>
-            <FormField type="number" label="Street Number" InputLabelProps={{ shrink: true }} />
+            <FormField type="number" label={t("street_number")} InputLabelProps={{ shrink: true }} />
           </Grid>
           <Grid item xs={12} md={7}>
-            <FormField type="text" label="City" InputLabelProps={{ shrink: true }} />
+            <FormField type="text" label={t("city")} InputLabelProps={{ shrink: true }} />
           </Grid>
           <Grid item xs={12} md={5}>
-            <FormField type="text" label="Country" InputLabelProps={{ shrink: true }} />
+            <FormField type="text" label={t("country")} InputLabelProps={{ shrink: true }} />
           </Grid>
         </Grid>
       </MDBox>

@@ -1,3 +1,27 @@
 {
-  "title": "wizard Page"
+  "build_your_profile": "プロファイル作成",
+  "profile_info_desc": "この情報は、あなたについてより詳しく知るためのものです。",
+  "step_about": "紹介",
+  "step_account": "アカウント",
+  "step_address": "住所",
+  "back": "戻る",
+  "send": "送信",
+  "next": "次へ",
+  "about_title": "基本情報から始めましょう",
+  "about_desc": "お名前とメールアドレスをお知らせください。他のユーザーから連絡があっても差し支えのないアドレスをご使用ください。",
+  "edit": "編集",
+  "first_name": "名",
+  "last_name": "姓",
+  "email_address": "メールアドレス",
+  "account_title": "どのような活動をされていますか？ (複数選択)",
+  "account_desc": "あなたについて詳しく教えてください。余暇にはどのようなことを楽しんでいますか？",
+  "design": "デザイン",
+  "code": "コード",
+  "develop": "開発",
+  "address_title": "素敵な地域にお住まいですか？",
+  "address_desc": "遅い日没の良さは、夕食前に近所の森を散歩する機会があることです。",
+  "street_name": "通り名",
+  "street_number": "番地",
+  "city": "市区町村",
+  "country": "国"
 }

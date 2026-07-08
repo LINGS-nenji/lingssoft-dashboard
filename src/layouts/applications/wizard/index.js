@@ -15,6 +15,9 @@ Coded by www.creative-tim.com
 
 import { useState } from "react";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 // @mui material components
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
@@ -37,8 +40,8 @@ import About from "layouts/applications/wizard/components/About";
 import Account from "layouts/applications/wizard/components/Account";
 import Address from "layouts/applications/wizard/components/Address";
 
-function getSteps() {
-  return ["About", "Account", "Address"];
+function getSteps(t) {
+  return [t("step_about"), t("step_account"), t("step_address")];
 }
 
 function getStepContent(stepIndex) {
@@ -55,8 +58,9 @@ function getStepContent(stepIndex) {
 }
 
 function Wizard() {
+  const { t } = useTranslation("page_wizard");
   const [activeStep, setActiveStep] = useState(0);
-  const steps = getSteps();
+  const steps = getSteps(t);
   const isLastStep = activeStep === steps.length - 1;
 
   const handleNext = () => setActiveStep(activeStep + 1);
@@ -71,11 +75,11 @@ function Wizard() {
             <MDBox mt={6} mb={8} textAlign="center">
               <MDBox mb={1}>
                 <MDTypography variant="h3" fontWeight="bold">
-                  Build Your Profile
+                  {t("build_your_profile")}
                 </MDTypography>
               </MDBox>
               <MDTypography variant="h5" fontWeight="regular" color="secondary">
-                This information will let us know more about you.
+                {t("profile_info_desc")}
               </MDTypography>
             </MDBox>
             <Card>
@@ -105,7 +109,7 @@ function Wizard() {
                         color="dark"
                         onClick={handleBack}
                       >
-                        back
+                        {t("back")}
                       </MDButton>
                     )}
                     <MDButton
@@ -113,7 +117,7 @@ function Wizard() {
                       color="dark"
                       onClick={!isLastStep ? handleNext : undefined}
                     >
-                      {isLastStep ? "send" : "next"}
+                      {isLastStep ? t("send") : t("next")}
                     </MDButton>
                   </MDBox>
                 </MDBox>

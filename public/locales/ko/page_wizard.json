@@ -1,3 +1,27 @@
 {
-  "title": "wizard 페이지"
+  "build_your_profile": "프로필 작성",
+  "profile_info_desc": "귀하에 대해 더 자세히 알아보기 위한 정보입니다.",
+  "step_about": "소개",
+  "step_account": "계정",
+  "step_address": "주소",
+  "back": "이전",
+  "send": "전송",
+  "next": "다음",
+  "about_title": "기본 정보부터 시작해 봅시다",
+  "about_desc": "성함과 이메일 주소를 입력해 주세요. 다른 사용자가 연락해도 괜찮은 이메일 주소를 사용해 주십시오.",
+  "edit": "편집",
+  "first_name": "이름",
+  "last_name": "성",
+  "email_address": "이메일 주소",
+  "account_title": "어떤 분야의 일을 하시나요? (복수 선택)",
+  "account_desc": "귀하에 대해 더 자세히 알려주세요. 여가 시간에는 주로 무엇을 하시나요?",
+  "design": "디자인",
+  "code": "코드",
+  "develop": "개발",
+  "address_title": "좋은 지역에 살고 계신가요?",
+  "address_desc": "늦은 일몰이 좋은 이유 중 하나는 저녁 식사 전에 동네 숲을 산책할 수 있다는 점입니다.",
+  "street_name": "도로명",
+  "street_number": "건물 번호",
+  "city": "도시",
+  "country": "국가"
 }

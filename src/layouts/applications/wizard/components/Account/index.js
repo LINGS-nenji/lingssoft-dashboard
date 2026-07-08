@@ -15,6 +15,9 @@ Coded by www.creative-tim.com
 
 import { useState } from "react";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 // @mui material components
 import Grid from "@mui/material/Grid";
 import Icon from "@mui/material/Icon";
@@ -25,6 +28,7 @@ import MDTypography from "components/MDTypography";
 import MDButton from "components/MDButton";
 
 function Account() {
+  const { t } = useTranslation("page_wizard");
   const [design, setDesign] = useState(false);
   const [code, setCode] = useState(false);
   const [develop, setDevelop] = useState(false);
@@ -66,12 +70,11 @@ function Account() {
       <MDBox width="80%" textAlign="center" mx="auto" my={4}>
         <MDBox mb={1}>
           <MDTypography variant="h5" fontWeight="regular">
-            What are you doing? (checkboxes)
+            {t("account_title")}
           </MDTypography>
         </MDBox>
         <MDTypography variant="body2" color="text">
-          Give us more details about you. What do you enjoy doing in your spare
-          time?
+          {t("account_desc")}
         </MDTypography>
       </MDBox>
       <MDBox mt={2}>
@@ -94,7 +97,7 @@ function Account() {
                 </Icon>
               </MDButton>
               <MDTypography variant="h6" sx={{ mt: 1 }}>
-                Design
+                {t("design")}
               </MDTypography>
             </MDBox>
           </Grid>
@@ -116,7 +119,7 @@ function Account() {
                 </Icon>
               </MDButton>
               <MDTypography variant="h6" sx={{ mt: 1 }}>
-                Code
+                {t("code")}
               </MDTypography>
             </MDBox>
           </Grid>
@@ -138,7 +141,7 @@ function Account() {
                 </Icon>
               </MDButton>
               <MDTypography variant="h6" sx={{ mt: 1 }}>
-                Develop
+                {t("develop")}
               </MDTypography>
             </MDBox>
           </Grid>

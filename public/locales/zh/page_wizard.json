@@ -1,3 +1,27 @@
 {
-  "title": "wizard Page"
+  "build_your_profile": "构建您的个人资料",
+  "profile_info_desc": "这些信息将使我们更好地了解您。",
+  "step_about": "关于",
+  "step_account": "账户",
+  "step_address": "地址",
+  "back": "返回",
+  "send": "发送",
+  "next": "下一步",
+  "about_title": "让我们从基本信息开始",
+  "about_desc": "让我们知道您的名字和电子邮件地址。请使用不介意其他用户联系您的邮箱地址",
+  "edit": "编辑",
+  "first_name": "名",
+  "last_name": "姓",
+  "email_address": "电子邮件地址",
+  "account_title": "您在从事什么？ (复选框)",
+  "account_desc": "向我们提供更多关于您的详细信息。您闲暇时间喜欢做什么？",
+  "design": "设计",
+  "code": "代码",
+  "develop": "开发",
+  "address_title": "您住在一个优美的地方吗？",
+  "address_desc": "我喜欢较晚日落的原因之一是，在晚饭前有机会去附近的树林散步",
+  "street_name": "街道名称",
+  "street_number": "门牌号",
+  "city": "城市",
+  "country": "国家"
 }

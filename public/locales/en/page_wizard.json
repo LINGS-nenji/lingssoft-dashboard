@@ -1,3 +1,27 @@
 {
-  "title": "wizard Page"
+  "build_your_profile": "Build Your Profile",
+  "profile_info_desc": "This information will let us know more about you.",
+  "step_about": "About",
+  "step_account": "Account",
+  "step_address": "Address",
+  "back": "back",
+  "send": "send",
+  "next": "next",
+  "about_title": "Let's start with the basic information",
+  "about_desc": "Let us know your name and email address. Use an address you don't mind other users contacting you at",
+  "edit": "Edit",
+  "first_name": "First Name",
+  "last_name": "Last Name",
+  "email_address": "Email Address",
+  "account_title": "What are you doing? (checkboxes)",
+  "account_desc": "Give us more details about you. What do you enjoy doing in your spare time?",
+  "design": "Design",
+  "code": "Code",
+  "develop": "Develop",
+  "address_title": "Are you living in a nice area?",
+  "address_desc": "One thing I love about the later sunsets is the chance to go for a walk through the neighborhood woods before dinner",
+  "street_name": "Street Name",
+  "street_number": "Street Number",
+  "city": "City",
+  "country": "Country"
 }
