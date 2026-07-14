@@ -1,3 +1,21 @@
 {
-  "title": "charts Page"
+  "title": "图表",
+  "subtitle": "此页面上的图表使用 Chart.js，这是一款面向设计师和开发人员简单且灵活的 JavaScript 图表库。",
+  "line_chart": "折线图",
+  "product_insights": "产品洞察",
+  "line_chart_gradient": "渐变折线图",
+  "visits_from_devices": "设备访问量",
+  "bar_chart": "柱状图",
+  "sales_age_average": "平均年龄与销售额",
+  "bar_chart_horizontal": "条形图",
+  "mixed_chart": "混合图表",
+  "analytics_insights": "分析洞察",
+  "bubble_chart": "气泡图",
+  "users_by_regions": "按地区划分的用户",
+  "doughnut_chart": "甜甜圈图",
+  "affiliates_program": "联盟计划",
+  "pie_chart": "饼图",
+  "radar_chart": "雷达图",
+  "sciences_score": "科学得分",
+  "polar_chart": "极坐标图"
 }

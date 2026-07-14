@@ -16,6 +16,9 @@ Coded by www.creative-tim.com
 // @mui material components
 import Grid from "@mui/material/Grid";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 // Material Dashboard 3 PRO React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
@@ -48,6 +51,8 @@ import radarChartData from "layouts/pages/charts/data/radarChartData";
 import polarChartData from "layouts/pages/charts/data/polarChartData";
 
 function Charts() {
+  const { t } = useTranslation("page_charts");
+
   return (
     <DashboardLayout>
       <DashboardNavbar />
@@ -55,10 +60,9 @@ function Charts() {
         <MDBox mb={3}>
           <Grid container spacing={3}>
             <Grid item xs={12} md={6} sx={{ lineHeight: 0 }}>
-              <MDTypography variant="h5">Charts</MDTypography>
+              <MDTypography variant="h5">{t("title")}</MDTypography>
               <MDTypography variant="button" color="text">
-                Charts on this page use Chart.js - Simple yet flexible JavaScript charting for
-                designers & developers.
+                {t("subtitle")}
               </MDTypography>
             </Grid>
           </Grid>
@@ -68,18 +72,18 @@ function Charts() {
             <Grid item xs={12} md={6}>
               <DefaultLineChart
                 icon={{ component: "insights" }}
-                title="Line chart"
+                title={t("line_chart")}
                 height="20rem"
-                description="Product insights"
+                description={t("product_insights")}
                 chart={defaultLineChartData}
               />
             </Grid>
             <Grid item xs={12} md={6}>
               <GradientLineChart
                 icon={{ component: "show_chart" }}
-                title="Line chart with gradient"
+                title={t("line_chart_gradient")}
                 height="20rem"
-                description="Visits from devices"
+                description={t("visits_from_devices")}
                 chart={gradientLineChartData}
               />
             </Grid>
@@ -90,18 +94,18 @@ function Charts() {
             <Grid item xs={12} md={6}>
               <VerticalBarChart
                 icon={{ color: "dark", component: "leaderboard" }}
-                title="Bar chart"
+                title={t("bar_chart")}
                 height="20rem"
-                description="Sales related to age average"
+                description={t("sales_age_average")}
                 chart={verticalBarChartData}
               />
             </Grid>
             <Grid item xs={12} md={6}>
               <HorizontalBarChart
                 icon={{ color: "dark", component: "splitscreen" }}
-                title="Bar chart horizontal"
+                title={t("bar_chart_horizontal")}
                 height="20rem"
-                description="Sales related to age average"
+                description={t("sales_age_average")}
                 chart={horizontalBarChartData}
               />
             </Grid>
@@ -112,18 +116,18 @@ function Charts() {
             <Grid item xs={12} md={6}>
               <MixedChart
                 icon={{ color: "primary", component: "auto_graph" }}
-                title="Mixed chart"
+                title={t("mixed_chart")}
                 height="20rem"
-                description="Analytics Insights"
+                description={t("analytics_insights")}
                 chart={mixedChartData}
               />
             </Grid>
             <Grid item xs={12} md={6}>
               <BubbleChart
                 icon={{ color: "primary", component: "multiline_chart" }}
-                title="Bubble chart"
+                title={t("bubble_chart")}
                 height="20rem"
-                description="Users divided by regions"
+                description={t("users_by_regions")}
                 chart={bubbleChartData}
               />
             </Grid>
@@ -134,18 +138,18 @@ function Charts() {
             <Grid item xs={12} md={6}>
               <DefaultDoughnutChart
                 icon={{ color: "success", component: "donut_small" }}
-                title="Doughnut chart"
+                title={t("doughnut_chart")}
                 height="20rem"
-                description="Affiliates program"
+                description={t("affiliates_program")}
                 chart={defaultDoughnutChartData}
               />
             </Grid>
             <Grid item xs={12} md={6}>
               <PieChart
                 icon={{ color: "success", component: "donut_small" }}
-                title="Pie chart"
+                title={t("pie_chart")}
                 height="20rem"
-                description="Analytics Insights"
+                description={t("analytics_insights")}
                 chart={pieChartData}
               />
             </Grid>
@@ -156,18 +160,18 @@ function Charts() {
             <Grid item xs={12} md={6}>
               <RadarChart
                 icon={{ color: "warning", component: "data_saver_on" }}
-                title="Radar chart"
+                title={t("radar_chart")}
                 height="32rem"
-                description="Sciences score"
+                description={t("sciences_score")}
                 chart={radarChartData}
               />
             </Grid>
             <Grid item xs={12} md={6}>
               <PolarChart
                 icon={{ color: "warning", component: "scatter_plot" }}
-                title="Polar chart"
+                title={t("polar_chart")}
                 height="32rem"
-                description="Analytics Insights"
+                description={t("analytics_insights")}
                 chart={polarChartData}
               />
             </Grid>

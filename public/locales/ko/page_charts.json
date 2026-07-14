@@ -1,3 +1,21 @@
 {
-  "title": "charts 페이지"
+  "title": "차트",
+  "subtitle": "이 페이지의 차트는 디자이너와 개발자를 위한 간단하면서도 유연한 자바스크립트 차트인 Chart.js를 사용합니다.",
+  "line_chart": "선 차트",
+  "product_insights": "제품 인사이트",
+  "line_chart_gradient": "그라디언트 선 차트",
+  "visits_from_devices": "기기별 방문자",
+  "bar_chart": "막대 차트",
+  "sales_age_average": "평균 연령 대비 매출",
+  "bar_chart_horizontal": "가로 막대 차트",
+  "mixed_chart": "혼합 차트",
+  "analytics_insights": "분석 인사이트",
+  "bubble_chart": "버블 차트",
+  "users_by_regions": "지역별 사용자 분포",
+  "doughnut_chart": "도넛 차트",
+  "affiliates_program": "제휴 프로그램",
+  "pie_chart": "파이 차트",
+  "radar_chart": "방사형 차트",
+  "sciences_score": "과학 점수",
+  "polar_chart": "극좌표 차트"
 }

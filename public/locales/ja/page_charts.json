@@ -1,3 +1,21 @@
 {
-  "title": "charts Page"
+  "title": "チャート",
+  "subtitle": "このページのチャートは、デザイナーや開発者向けのシンプルかつ柔軟なJavaScriptチャートであるChart.jsを使用しています。",
+  "line_chart": "折れ線グラフ",
+  "product_insights": "製品インサイト",
+  "line_chart_gradient": "グラデーション折れ線グラフ",
+  "visits_from_devices": "デバイス別訪問者",
+  "bar_chart": "棒グラフ",
+  "sales_age_average": "平均年齢層別売上",
+  "bar_chart_horizontal": "横棒グラフ",
+  "mixed_chart": "複合グラフ",
+  "analytics_insights": "分析インサイト",
+  "bubble_chart": "バブルチャート",
+  "users_by_regions": "地域別ユーザー分布",
+  "doughnut_chart": "ドーナツチャート",
+  "affiliates_program": "アフィリエイトプログラム",
+  "pie_chart": "円グラフ",
+  "radar_chart": "レーダーチャート",
+  "sciences_score": "科学のスコア",
+  "polar_chart": "ポーラーチャート"
 }

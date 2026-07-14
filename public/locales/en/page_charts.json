@@ -1,3 +1,21 @@
 {
-  "title": "charts Page"
+  "title": "Charts",
+  "subtitle": "Charts on this page use Chart.js - Simple yet flexible JavaScript charting for designers & developers.",
+  "line_chart": "Line chart",
+  "product_insights": "Product insights",
+  "line_chart_gradient": "Line chart with gradient",
+  "visits_from_devices": "Visits from devices",
+  "bar_chart": "Bar chart",
+  "sales_age_average": "Sales related to age average",
+  "bar_chart_horizontal": "Bar chart horizontal",
+  "mixed_chart": "Mixed chart",
+  "analytics_insights": "Analytics Insights",
+  "bubble_chart": "Bubble chart",
+  "users_by_regions": "Users divided by regions",
+  "doughnut_chart": "Doughnut chart",
+  "affiliates_program": "Affiliates program",
+  "pie_chart": "Pie chart",
+  "radar_chart": "Radar chart",
+  "sciences_score": "Sciences score",
+  "polar_chart": "Polar chart"
 }
