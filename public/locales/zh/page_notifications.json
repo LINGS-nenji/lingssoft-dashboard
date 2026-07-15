@@ -1,3 +1,16 @@
 {
-  "title": "notifications Page"
+  "alerts_title": "警报",
+  "alert_simple_part1": "一个简单的 ",
+  "alert_simple_part2": " 警报，带有 ",
+  "alert_link": "示例链接",
+  "alert_click": "。如果您愿意，可以点击它。",
+  "md_title": "Material Dashboard",
+  "hello_msg": "你好，世界！这是一条通知消息",
+  "time_11_mins": "11分钟前",
+  "notifications_title": "通知",
+  "notifications_desc": "此页面上的通知使用 Bootstrap 的 Toasts。在此处阅读更多详细信息。",
+  "success_notif": "成功通知",
+  "info_notif": "信息通知",
+  "warning_notif": "警告通知",
+  "error_notif": "错误通知"
 }

@@ -1,3 +1,16 @@
 {
-  "title": "notifications Page"
+  "alerts_title": "アラート",
+  "alert_simple_part1": "シンプルな ",
+  "alert_simple_part2": " アラートと ",
+  "alert_link": "リンク例",
+  "alert_click": "。よろしければクリックしてください。",
+  "md_title": "マテリアルダッシュボード",
+  "hello_msg": "こんにちは！これは通知メッセージです",
+  "time_11_mins": "11分前",
+  "notifications_title": "通知",
+  "notifications_desc": "このページの通知は Bootstrap の Toasts を使用しています。詳細はこちらをご覧ください。",
+  "success_notif": "成功通知",
+  "info_notif": "情報通知",
+  "warning_notif": "警告通知",
+  "error_notif": "エラー通知"
 }

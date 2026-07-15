@@ -14,6 +14,7 @@ Coded by www.creative-tim.com
 */
 
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 // @mui material components
 import Grid from "@mui/material/Grid";
@@ -32,6 +33,7 @@ import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
 
 function Notifications() {
+  const { t } = useTranslation("page_notifications");
   const [successSB, setSuccessSB] = useState(false);
   const [infoSB, setInfoSB] = useState(false);
   const [warningSB, setWarningSB] = useState(false);
@@ -48,7 +50,7 @@ function Notifications() {
 
   const alertContent = (name) => (
     <MDTypography variant="body2" color="white">
-      A simple {name} alert with{" "}
+      {t("alert_simple_part1")} {name} {t("alert_simple_part2")}
       <MDTypography
         component="a"
         href="#"
@@ -56,9 +58,9 @@ function Notifications() {
         fontWeight="medium"
         color="white"
       >
-        an example link
+        {t("alert_link")}
       </MDTypography>
-      . Give it a click if you like.
+      {t("alert_click")}
     </MDTypography>
   );
 
@@ -66,9 +68,9 @@ function Notifications() {
     <MDSnackbar
       color="success"
       icon="check"
-      title="Material Dashboard"
-      content="Hello, world! This is a notification message"
-      dateTime="11 mins ago"
+      title={t("md_title")}
+      content={t("hello_msg")}
+      dateTime={t("time_11_mins")}
       open={successSB}
       onClose={closeSuccessSB}
       close={closeSuccessSB}
@@ -79,9 +81,9 @@ function Notifications() {
   const renderInfoSB = (
     <MDSnackbar
       icon="notifications"
-      title="Material Dashboard"
-      content="Hello, world! This is a notification message"
-      dateTime="11 mins ago"
+      title={t("md_title")}
+      content={t("hello_msg")}
+      dateTime={t("time_11_mins")}
       open={infoSB}
       onClose={closeInfoSB}
       close={closeInfoSB}
@@ -92,9 +94,9 @@ function Notifications() {
     <MDSnackbar
       color="warning"
       icon="star"
-      title="Material Dashboard"
-      content="Hello, world! This is a notification message"
-      dateTime="11 mins ago"
+      title={t("md_title")}
+      content={t("hello_msg")}
+      dateTime={t("time_11_mins")}
       open={warningSB}
       onClose={closeWarningSB}
       close={closeWarningSB}
@@ -106,9 +108,9 @@ function Notifications() {
     <MDSnackbar
       color="error"
       icon="warning"
-      title="Material Dashboard"
-      content="Hello, world! This is a notification message"
-      dateTime="11 mins ago"
+      title={t("md_title")}
+      content={t("hello_msg")}
+      dateTime={t("time_11_mins")}
       open={errorSB}
       onClose={closeErrorSB}
       close={closeErrorSB}
@@ -124,7 +126,7 @@ function Notifications() {
           <Grid item xs={12} lg={8}>
             <Card>
               <MDBox p={2}>
-                <MDTypography variant="h5">Alerts</MDTypography>
+                <MDTypography variant="h5">{t("alerts_title")}</MDTypography>
               </MDBox>
               <MDBox pt={2} px={2}>
                 <MDAlert color="primary" dismissible>
@@ -158,14 +160,13 @@ function Notifications() {
           <Grid item xs={12} lg={8}>
             <Card>
               <MDBox p={2} lineHeight={0}>
-                <MDTypography variant="h5">Notifications</MDTypography>
+                <MDTypography variant="h5">{t("notifications_title")}</MDTypography>
                 <MDTypography
                   variant="button"
                   color="text"
                   fontWeight="regular"
                 >
-                  Notifications on this page use Toasts from Bootstrap. Read
-                  more details here.
+                  {t("notifications_desc")}
                 </MDTypography>
               </MDBox>
               <MDBox p={2}>
@@ -177,7 +178,7 @@ function Notifications() {
                       onClick={openSuccessSB}
                       fullWidth
                     >
-                      success notification
+                      {t("success_notif")}
                     </MDButton>
                     {renderSuccessSB}
                   </Grid>
@@ -188,7 +189,7 @@ function Notifications() {
                       onClick={openInfoSB}
                       fullWidth
                     >
-                      info notification
+                      {t("info_notif")}
                     </MDButton>
                     {renderInfoSB}
                   </Grid>
@@ -199,7 +200,7 @@ function Notifications() {
                       onClick={openWarningSB}
                       fullWidth
                     >
-                      warning notification
+                      {t("warning_notif")}
                     </MDButton>
                     {renderWarningSB}
                   </Grid>
@@ -210,7 +211,7 @@ function Notifications() {
                       onClick={openErrorSB}
                       fullWidth
                     >
-                      error notification
+                      {t("error_notif")}
                     </MDButton>
                     {renderErrorSB}
                   </Grid>

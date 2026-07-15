@@ -1,3 +1,16 @@
 {
-  "title": "notifications Page"
+  "alerts_title": "Alerts",
+  "alert_simple_part1": "A simple ",
+  "alert_simple_part2": " alert with ",
+  "alert_link": "an example link",
+  "alert_click": ". Give it a click if you like.",
+  "md_title": "Material Dashboard",
+  "hello_msg": "Hello, world! This is a notification message",
+  "time_11_mins": "11 mins ago",
+  "notifications_title": "Notifications",
+  "notifications_desc": "Notifications on this page use Toasts from Bootstrap. Read more details here.",
+  "success_notif": "success notification",
+  "info_notif": "info notification",
+  "warning_notif": "warning notification",
+  "error_notif": "error notification"
 }
