@@ -27,5 +27,23 @@
     "start_conversation": "아래 입력창에서 대화를 시작하세요.",
     "message_label": "메시지",
     "message_placeholder": "무엇이든 물어보세요"
+  },
+  "common": {
+    "language": "언어",
+    "korean": "한국어",
+    "last_7_days": "최근 7일",
+    "last_week": "지난주",
+    "last_30_days": "최근 30일",
+    "total": "총계",
+    "action": "작업",
+    "another_action": "다른 작업",
+    "something_else_here": "기타"
+  },
+  "dashboard": {
+    "channels": "채널"
+  },
+  "product": {
+    "media": "미디어",
+    "pricing": "가격"
   }
 }
