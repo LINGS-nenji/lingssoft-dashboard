@@ -17,6 +17,9 @@ Coded by www.creative-tim.com
 import Grid from "@mui/material/Grid";
 import Autocomplete from "@mui/material/Autocomplete";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 // Material Dashboard 3 PRO React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
@@ -26,9 +29,11 @@ import MDInput from "components/MDInput";
 import FormField from "layouts/ecommerce/products/new-product/components/FormField";
 
 function Pricing() {
+  const { t } = useTranslation("translation");
+  
   return (
     <MDBox>
-      <MDTypography variant="h5">Pricing</MDTypography>
+      <MDTypography variant="h5">{t("product.pricing")}</MDTypography>
       <MDBox mt={3}>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={3}>

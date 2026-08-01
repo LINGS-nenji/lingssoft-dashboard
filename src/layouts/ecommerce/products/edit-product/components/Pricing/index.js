@@ -18,6 +18,9 @@ import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
 import Autocomplete from "@mui/material/Autocomplete";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 // Material Dashboard 3 PRO React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
@@ -27,11 +30,13 @@ import MDInput from "components/MDInput";
 import FormField from "layouts/ecommerce/products/edit-product/components/FormField";
 
 function Pricing() {
+  const { t } = useTranslation("translation");
+  
   return (
     <Card sx={{ overflow: "visible" }}>
       <MDBox p={3}>
         <MDTypography variant="h5" fontWeight="bold">
-          Pricing
+          {t("product.pricing")}
         </MDTypography>
         <MDBox mt={1}>
           <Grid container spacing={3}>
