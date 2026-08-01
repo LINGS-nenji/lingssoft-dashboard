@@ -19,6 +19,9 @@ import Tooltip from "@mui/material/Tooltip";
 import Icon from "@mui/material/Icon";
 import Grid from "@mui/material/Grid";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 // Material Dashboard 3 PRO React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
@@ -33,13 +36,14 @@ import channelChartData from "layouts/dashboards/sales/components/ChannelsChart/
 import { useMaterialUIController } from "context";
 
 function ChannelsChart() {
+  const { t } = useTranslation("translation");
   const [controller] = useMaterialUIController();
   const { darkMode } = controller;
 
   return (
     <Card sx={{ height: "100%" }}>
       <MDBox display="flex" justifyContent="space-between" alignItems="center" pt={2} px={2}>
-        <MDTypography variant="h6">Channels</MDTypography>
+        <MDTypography variant="h6">{t("dashboard.channels")}</MDTypography>
         <Tooltip title="See traffic channels" placement="bottom" arrow>
           <MDButton variant="outlined" color="secondary" size="small" circular iconOnly>
             <Icon>priority_high</Icon>

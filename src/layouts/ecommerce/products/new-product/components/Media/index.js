@@ -20,10 +20,15 @@ import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDDropzone from "components/MDDropzone";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 function Media() {
+  const { t } = useTranslation("translation");
+  
   return (
     <MDBox>
-      <MDTypography variant="h5">Media</MDTypography>
+      <MDTypography variant="h5">{t("product.media")}</MDTypography>
       <MDBox mt={3}>
         <MDBox mb={1} ml={0.5} lineHeight={0} display="inline-block">
           <MDTypography component="label" variant="button" fontWeight="regular" color="text">

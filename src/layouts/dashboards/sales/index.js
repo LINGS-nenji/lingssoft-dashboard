@@ -91,9 +91,9 @@ function Sales() {
       keepMounted
       disableAutoFocusItem
     >
-      <MenuItem onClick={close}>Last 7 days</MenuItem>
-      <MenuItem onClick={close}>Last week</MenuItem>
-      <MenuItem onClick={close}>Last 30 days</MenuItem>
+      <MenuItem onClick={close}>{t("common.last_7_days", { ns: "translation" })}</MenuItem>
+      <MenuItem onClick={close}>{t("common.last_week", { ns: "translation" })}</MenuItem>
+      <MenuItem onClick={close}>{t("common.last_30_days", { ns: "translation" })}</MenuItem>
     </Menu>
   );
 

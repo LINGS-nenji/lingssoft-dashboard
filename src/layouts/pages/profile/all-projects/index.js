@@ -21,6 +21,9 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Icon from "@mui/material/Icon";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 // Material Dashboard 3 PRO React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
@@ -49,6 +52,8 @@ import logoInvision from "assets/images/small-logos/logo-invision.svg";
 import logoAtlassian from "assets/images/small-logos/logo-atlassian.svg";
 
 function AllProjects() {
+  const { t } = useTranslation(["page_all_projects", "translation"]);
+
   // ComplexProjectCard dropdown menu state
   const [slackBotMenu, setSlackBotMenu] = useState(null);
   const [premiumSupportMenu, setPremiumSupportMenu] = useState(null);
@@ -78,9 +83,9 @@ function AllProjects() {
       onClose={close}
       keepMounted
     >
-      <MenuItem onClick={close}>Action</MenuItem>
-      <MenuItem onClick={close}>Another action</MenuItem>
-      <MenuItem onClick={close}>Something else here</MenuItem>
+      <MenuItem onClick={close}>{t("common.action", { ns: "translation" })}</MenuItem>
+      <MenuItem onClick={close}>{t("common.another_action", { ns: "translation" })}</MenuItem>
+      <MenuItem onClick={close}>{t("common.something_else_here", { ns: "translation" })}</MenuItem>
     </Menu>
   );
 
