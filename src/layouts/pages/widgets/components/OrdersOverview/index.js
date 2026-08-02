@@ -15,6 +15,9 @@ Coded by www.creative-tim.com
 
 // @mui material components
 import Card from "@mui/material/Card";
+
+// react-i18next
+import { useTranslation } from "react-i18next";
 import Icon from "@mui/material/Icon";
 
 // Material Dashboard 3 PRO React components
@@ -25,11 +28,12 @@ import MDTypography from "components/MDTypography";
 import TimelineItem from "examples/Timeline/TimelineItem";
 
 function OrdersOverview() {
+  const { t } = useTranslation("page_widgets");
   return (
     <Card sx={{ height: "100%" }}>
       <MDBox pt={3} px={3}>
         <MDTypography variant="h6" fontWeight="medium">
-          Orders overview
+          {t("orders_overview")}
         </MDTypography>
         <MDBox mt={0} mb={2}>
           <MDTypography variant="button" color="text" fontWeight="regular">
@@ -40,7 +44,7 @@ function OrdersOverview() {
             <MDTypography variant="button" color="text" fontWeight="medium">
               24%
             </MDTypography>{" "}
-            this month
+            {t("this_month")}
           </MDTypography>
         </MDBox>
       </MDBox>

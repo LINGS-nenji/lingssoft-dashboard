@@ -16,17 +16,21 @@ Coded by www.creative-tim.com
 // @mui material components
 import Card from "@mui/material/Card";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 // Material Dashboard 3 PRO React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDBadge from "components/MDBadge";
 
 function Steps() {
+  const { t } = useTranslation("page_widgets");
   return (
     <Card>
       <MDBox p={3}>
         <MDTypography variant="body2" color="text">
-          Steps
+          {t("steps")}
         </MDTypography>
         <MDBox mt={2} mb={1} lineHeight={0}>
           <MDTypography variant="h3" fontWeight="bold">
