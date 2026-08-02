@@ -16,6 +16,9 @@ Coded by www.creative-tim.com
 // @mui material components
 import Card from "@mui/material/Card";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 // Material Dashboard 3 PRO React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
@@ -24,14 +27,15 @@ import MDTypography from "components/MDTypography";
 import DefaultItem from "examples/Items/DefaultItem";
 
 function UpcomingEvents() {
+  const { t } = useTranslation("page_widgets");
   return (
     <Card sx={{ height: "100%" }}>
       <MDBox pt={2} px={2} lineHeight={1}>
         <MDTypography variant="h6" fontWeight="medium">
-          Upcoming events
+          {t("upcoming_events")}
         </MDTypography>
         <MDTypography variant="button" color="text" fontWeight="regular">
-          Joined
+          {t("joined")}
         </MDTypography>
       </MDBox>
       <MDBox p={2}>
