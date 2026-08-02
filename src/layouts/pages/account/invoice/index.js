@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Material Dashboard 3 PRO React - v2.4.0
+* {t("item_2")} React - v2.4.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-pro-react
@@ -25,6 +25,9 @@ import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDButton from "components/MDButton";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 // Invoice page components
 import BaseLayout from "layouts/pages/account/components/BaseLayout";
 
@@ -36,6 +39,7 @@ import logoCTDark from "assets/images/logo-ct-dark.png";
 import { useMaterialUIController } from "context";
 
 function Invoice() {
+  const { t } = useTranslation("page_invoice");
   const [controller] = useMaterialUIController();
   const { darkMode } = controller;
 
@@ -62,7 +66,7 @@ function Invoice() {
                       mb={1}
                     />
                     <MDTypography variant="h6" fontWeight="medium">
-                      St. Independence Embankment, 050105 Bucharest, Romania
+                      {t("company_address")}
                     </MDTypography>
                     <MDBox mt={1} mb={2}>
                       <MDTypography
@@ -70,7 +74,7 @@ function Invoice() {
                         variant="body2"
                         color={darkMode ? "text" : "secondary"}
                       >
-                        tel: +4 (074) 1090873
+                        {t("company_tel")}
                       </MDTypography>
                     </MDBox>
                   </Grid>
@@ -78,16 +82,16 @@ function Invoice() {
                     <MDBox width="100%" textAlign={{ xs: "left", md: "right" }} mt={6}>
                       <MDBox mt={1}>
                         <MDTypography variant="h6" fontWeight="medium">
-                          Billed to: John Doe
+                          {t("billed_to")}
                         </MDTypography>
                       </MDBox>
                       <MDBox mb={1}>
                         <MDTypography variant="body2" color={darkMode ? "text" : "secondary"}>
-                          4006 Locust View Drive
+                          {t("billing_address_1")}
                           <br />
-                          San Francisco CA
+                          {t("billing_address_2")}
                           <br />
-                          California
+                          {t("billing_address_3")}
                         </MDTypography>
                       </MDBox>
                     </MDBox>
@@ -101,10 +105,10 @@ function Invoice() {
                         color={darkMode ? "text" : "secondary"}
                         fontWeight="regular"
                       >
-                        Invoice no
+                        {t("invoice_no")}
                       </MDTypography>
                       <MDTypography variant="h5" fontWeight="medium">
-                        #0453119
+                        {t("invoice_no_value")}
                       </MDTypography>
                     </Grid>
                     <Grid item xs={12} md={7} lg={5}>
@@ -122,12 +126,12 @@ function Invoice() {
                             color={darkMode ? "text" : "secondary"}
                             fontWeight="regular"
                           >
-                            Invoice date:
+                            {t("invoice_date")}
                           </MDTypography>
                         </MDBox>
                         <MDBox width="50%">
                           <MDTypography variant="h6" fontWeight="medium">
-                            06/03/2019
+                            {t("invoice_date_value")}
                           </MDTypography>
                         </MDBox>
                       </MDBox>
@@ -144,12 +148,12 @@ function Invoice() {
                             color={darkMode ? "text" : "secondary"}
                             fontWeight="regular"
                           >
-                            Due date:
+                            {t("due_date")}
                           </MDTypography>
                         </MDBox>
                         <MDBox width="50%">
                           <MDTypography variant="h6" fontWeight="medium">
-                            11/03/2019
+                            {t("due_date_value")}
                           </MDTypography>
                         </MDBox>
                       </MDBox>
@@ -173,7 +177,7 @@ function Invoice() {
                           sx={borderBottom}
                         >
                           <MDTypography variant="h6" color="text" fontWeight="medium">
-                            Item
+                            {t("item")}
                           </MDTypography>
                         </MDBox>
                         <MDBox
@@ -185,7 +189,7 @@ function Invoice() {
                           sx={borderBottom}
                         >
                           <MDTypography variant="h6" color="text" fontWeight="medium">
-                            Qty
+                            {t("qty")}
                           </MDTypography>
                         </MDBox>
                         <MDBox
@@ -197,7 +201,7 @@ function Invoice() {
                           sx={borderBottom}
                         >
                           <MDTypography variant="h6" color="text" fontWeight="medium">
-                            Rate
+                            {t("rate")}
                           </MDTypography>
                         </MDBox>
                         <MDBox
@@ -209,7 +213,7 @@ function Invoice() {
                           sx={borderBottom}
                         >
                           <MDTypography variant="h6" color="text" fontWeight="medium">
-                            Amount
+                            {t("amount")}
                           </MDTypography>
                         </MDBox>
                       </TableRow>
@@ -218,7 +222,7 @@ function Invoice() {
                       <TableRow>
                         <MDBox component="td" textAlign="left" p={1} sx={borderBottom}>
                           <MDTypography variant="body2" color="text" fontWeight="regular">
-                            Premium Support
+                            {t("item_1")}
                           </MDTypography>
                         </MDBox>
                         <MDBox
@@ -304,7 +308,7 @@ function Invoice() {
                       <TableRow>
                         <MDBox component="td" textAlign="left" p={1}>
                           <MDTypography variant="body2" color="text" fontWeight="regular">
-                            Parts for service
+                            {t("item_3")}
                           </MDTypography>
                         </MDBox>
                         <MDBox component="td" textAlign="left" py={1} pr={1} pl={3}>
@@ -341,7 +345,7 @@ function Invoice() {
                           pl={3}
                           sx={borderBottom}
                         >
-                          <MDTypography variant="h5">Total</MDTypography>
+                          <MDTypography variant="h5">{t("total")}</MDTypography>
                         </MDBox>
                         <MDBox
                           component="td"
@@ -364,11 +368,11 @@ function Invoice() {
                 <Grid container>
                   <Grid item xs={12} lg={5}>
                     <MDTypography variant="h5" fontWeight="medium">
-                      Thank you!
+                      {t("thank_you")}
                     </MDTypography>
                     <MDBox mt={1} mb={2} lineHeight={0}>
                       <MDTypography variant="button" color={darkMode ? "text" : "secondary"}>
-                        If you encounter any issues related to the invoice you can contact us at:
+                        {t("support_text")}
                       </MDTypography>
                     </MDBox>
                     <MDTypography
@@ -377,9 +381,9 @@ function Invoice() {
                       fontWeight="regular"
                       color={darkMode ? "text" : "secondary"}
                     >
-                      email:{" "}
+                      {t("email_label")}
                       <MDTypography component="span" variant="h6" fontWeight="regular">
-                        support@creative-tim.com
+                        {t("email_value")}
                       </MDTypography>
                     </MDTypography>
                   </Grid>
@@ -393,7 +397,7 @@ function Invoice() {
                       mt={{ xs: 2, md: 0 }}
                     >
                       <MDButton variant="gradient" color="info" onClick={() => window.print(this)}>
-                        print
+                        {t("print")}
                       </MDButton>
                     </MDBox>
                   </Grid>
