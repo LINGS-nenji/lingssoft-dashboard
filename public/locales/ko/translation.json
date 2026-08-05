@@ -45,5 +45,11 @@
   "product": {
     "media": "미디어",
     "pricing": "가격"
+  },
+  "cards": {
+    "card_holder": "카드 소유자",
+    "expires": "만료일",
+    "due_date": "마감일",
+    "participants": "참여자"
   }
 }
