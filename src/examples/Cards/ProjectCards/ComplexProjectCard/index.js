@@ -21,6 +21,9 @@ import Card from "@mui/material/Card";
 import Divider from "@mui/material/Divider";
 import Icon from "@mui/material/Icon";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 // Material Dashboard 3 PRO React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
@@ -28,6 +31,7 @@ import MDAvatar from "components/MDAvatar";
 
 // Custom styles for ComplexProjectCard
 function ComplexProjectCard({ color = "dark", image, title, dateTime = "", description, members = [], dropdown = false }) {
+  const { t } = useTranslation("translation");
   const renderMembers = members.map((member, key) => {
     const memberKey = `member-${key}`;
 
@@ -103,7 +107,7 @@ function ComplexProjectCard({ color = "dark", image, title, dateTime = "", descr
                 {members.length}
               </MDTypography>
               <MDTypography variant="button" fontWeight="regular" color="secondary">
-                Participants
+                {t("cards.participants")}
               </MDTypography>
             </MDBox>
           ) : null}
@@ -113,7 +117,7 @@ function ComplexProjectCard({ color = "dark", image, title, dateTime = "", descr
                 {dateTime}
               </MDTypography>
               <MDTypography variant="button" fontWeight="regular" color="secondary">
-                Due date
+                {t("cards.due_date")}
               </MDTypography>
             </MDBox>
           ) : null}

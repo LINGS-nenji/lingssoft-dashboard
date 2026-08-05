@@ -20,6 +20,9 @@ import PropTypes from "prop-types";
 import Card from "@mui/material/Card";
 import Icon from "@mui/material/Icon";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 // Material Dashboard 3 PRO React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
@@ -28,7 +31,8 @@ import MDTypography from "components/MDTypography";
 import pattern from "assets/images/illustrations/pattern-tree.svg";
 import masterCardLogo from "assets/images/logos/mastercard.png";
 
-function MasterCard({ color = "dark", number, holder, expires }) {
+function MasterCard({ color = "dark", number, holder, expires: exp }) {
+  const { t } = useTranslation("translation");
   const numbers = [...`${number}`];
 
   if (numbers.length < 16 || numbers.length > 16) {
@@ -75,7 +79,7 @@ function MasterCard({ color = "dark", number, holder, expires }) {
           <MDBox display="flex" alignItems="center">
             <MDBox mr={3} lineHeight={1}>
               <MDTypography variant="button" color="white" fontWeight="regular" opacity={0.8}>
-                Card Holder
+                {t("cards.card_holder")}
               </MDTypography>
               <MDTypography
                 variant="h6"
@@ -88,10 +92,10 @@ function MasterCard({ color = "dark", number, holder, expires }) {
             </MDBox>
             <MDBox lineHeight={1}>
               <MDTypography variant="button" color="white" fontWeight="regular" opacity={0.8}>
-                Expires
+                {t("cards.expires")}
               </MDTypography>
               <MDTypography variant="h6" color="white" fontWeight="medium">
-                {expires}
+                {exp}
               </MDTypography>
             </MDBox>
           </MDBox>

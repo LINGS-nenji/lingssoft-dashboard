@@ -45,5 +45,11 @@
   "product": {
     "media": "Media",
     "pricing": "Pricing"
+  },
+  "cards": {
+    "card_holder": "Card Holder",
+    "expires": "Expires",
+    "due_date": "Due date",
+    "participants": "Participants"
   }
 }
