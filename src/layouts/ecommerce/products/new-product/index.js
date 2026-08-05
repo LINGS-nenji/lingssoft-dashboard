@@ -32,14 +32,17 @@ import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 // NewProduct page components
 import ProductInfo from "layouts/ecommerce/products/new-product/components/ProductInfo";
 import Media from "layouts/ecommerce/products/new-product/components/Media";
 import Socials from "layouts/ecommerce/products/new-product/components/Socials";
 import Pricing from "layouts/ecommerce/products/new-product/components/Pricing";
 
-function getSteps() {
-  return ["1. Product Info", "2. Media", "3. Social", "4. Pricing"];
+function getSteps(t) {
+  return [t("step_1"), t("step_2"), t("step_3"), t("step_4")];
 }
 
 function getStepContent(stepIndex) {
@@ -58,8 +61,9 @@ function getStepContent(stepIndex) {
 }
 
 function NewProduct() {
+  const { t } = useTranslation("page_new_product");
   const [activeStep, setActiveStep] = useState(0);
-  const steps = getSteps();
+  const steps = getSteps(t);
   const isLastStep = activeStep === steps.length - 1;
 
   const handleNext = () => setActiveStep(activeStep + 1);
@@ -74,11 +78,11 @@ function NewProduct() {
             <MDBox mt={6} mb={8} textAlign="center">
               <MDBox mb={1}>
                 <MDTypography variant="h3" fontWeight="bold">
-                  Add New Product
+                  {t("title")}
                 </MDTypography>
               </MDBox>
               <MDTypography variant="h5" fontWeight="regular" color="secondary">
-                This information will describe more about the product.
+                {t("desc")}
               </MDTypography>
             </MDBox>
             <Card>
@@ -108,7 +112,7 @@ function NewProduct() {
                         color="light"
                         onClick={handleBack}
                       >
-                        back
+                        {t("back")}
                       </MDButton>
                     )}
                     <MDButton
@@ -116,7 +120,7 @@ function NewProduct() {
                       color="dark"
                       onClick={!isLastStep ? handleNext : undefined}
                     >
-                      {isLastStep ? "send" : "next"}
+                      {isLastStep ? t("send") : t("next")}
                     </MDButton>
                   </MDBox>
                 </MDBox>

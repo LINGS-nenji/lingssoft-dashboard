@@ -62,7 +62,7 @@ function Sessions() {
             </MDBox>
             <MDBox height="100%" ml={2} lineHeight={1} mr={2}>
               <MDTypography display="block" variant="button" fontWeight="regular" color="text">
-                Bucharest 68.133.163.201
+                {t("bucharest_ip")}
               </MDTypography>
               <MDTypography variant="caption" color="text">
                 {t("sess_current")}
@@ -79,7 +79,7 @@ function Sessions() {
             />
             <MDBox mx={2} lineHeight={1}>
               <MDTypography variant="button" color="secondary" fontWeight="regular">
-                EU
+                {t("eu")}
               </MDTypography>
             </MDBox>
             <MDTypography
@@ -108,14 +108,14 @@ function Sessions() {
             </MDBox>
             <MDBox ml={2}>
               <MDTypography display="block" variant="body2" fontWeight="regular" color="text">
-                Chrome on macOS
+                {t("chrome_macos")}
               </MDTypography>
             </MDBox>
           </MDBox>
           <MDBox display="flex" alignItems="center">
             <MDBox mx={2} lineHeight={1}>
               <MDTypography variant="button" color="secondary" fontWeight="regular">
-                US
+                {t("us")}
               </MDTypography>
             </MDBox>
             <MDTypography
@@ -144,7 +144,7 @@ function Sessions() {
             </MDBox>
             <MDBox ml={2}>
               <MDTypography display="block" variant="body2" fontWeight="regular" color="text">
-                Safari on iPhone
+                {t("safari_iphone")}
               </MDTypography>
             </MDBox>
           </MDBox>
