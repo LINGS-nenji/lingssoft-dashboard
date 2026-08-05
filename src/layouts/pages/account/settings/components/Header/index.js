@@ -47,7 +47,7 @@ function Header() {
           <Grid item>
             <MDBox height="100%" mt={0.5} lineHeight={1}>
               <MDTypography variant="h5" fontWeight="medium">
-                Alex Thompson
+                {t("alex_thompson")}
               </MDTypography>
               <MDTypography variant="button" color="text" fontWeight="medium">
                 {t("header_role")}

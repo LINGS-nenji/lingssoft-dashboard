@@ -1,3 +1,11 @@
 {
-  "title": "new_product Page"
+  "title": "Add New Product",
+  "desc": "This information will describe more about the product.",
+  "step_1": "1. Product Info",
+  "step_2": "2. Media",
+  "step_3": "3. Social",
+  "step_4": "4. Pricing",
+  "back": "back",
+  "next": "next",
+  "send": "send"
 }

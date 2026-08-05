@@ -71,5 +71,11 @@
   "del_title": "계정 삭제",
   "del_desc": "계정을 삭제하면 되돌릴 수 없습니다. 신중하게 결정하세요.",
   "del_deactivate": "비활성화",
-  "del_delete": "계정 삭제"
+  "del_delete": "계정 삭제",
+  "chrome_macos": "macOS의 Chrome",
+  "safari_iphone": "iPhone의 Safari",
+  "bucharest_ip": "부쿠레슈티 68.133.163.201",
+  "eu": "유럽(EU)",
+  "us": "미국(US)",
+  "alex_thompson": "알렉스 톰슨"
 }

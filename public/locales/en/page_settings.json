@@ -71,5 +71,11 @@
   "del_title": "Delete Account",
   "del_desc": "Once you delete your account, there is no going back. Please be certain.",
   "del_deactivate": "deactivate",
-  "del_delete": "delete account"
+  "del_delete": "delete account",
+  "chrome_macos": "Chrome on macOS",
+  "safari_iphone": "Safari on iPhone",
+  "bucharest_ip": "Bucharest 68.133.163.201",
+  "eu": "EU",
+  "us": "US",
+  "alex_thompson": "Alex Thompson"
 }
