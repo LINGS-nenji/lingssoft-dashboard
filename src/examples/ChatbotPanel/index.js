@@ -155,7 +155,7 @@ function ChatbotPanel() {
         pb={3}
         display="flex"
         flexDirection="column"
-        height="calc(100vh - 7.75rem)"
+        height="calc(100dvh - 7.75rem)"
       >
         <MDBox
           flex={1}
