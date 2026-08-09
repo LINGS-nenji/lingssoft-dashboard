@@ -2,5 +2,21 @@
   "title": "당신에게 딱 맞는 플랜을 선택하세요",
   "subtitle": "각 패키지마다 무료 무제한 업데이트와 프리미엄 지원이 포함됩니다.",
   "monthly": "월간",
-  "annual": "연간"
+  "annual": "연간",
+  "starter": "스타터",
+  "premium": "프리미엄",
+  "enterprise": "엔터프라이즈",
+  "team_members_2": "2명의 팀원",
+  "team_members_10": "10명의 팀원",
+  "team_members_unlimited": "무제한 팀원",
+  "storage_20": "20GB 클라우드 스토리지",
+  "storage_40": "40GB 클라우드 스토리지",
+  "storage_100": "100GB 클라우드 스토리지",
+  "integration_help": "통합 지원",
+  "sketch_files": "Sketch 파일",
+  "api_access": "API 액세스",
+  "complete_documentation": "완전한 문서",
+  "mo": "월",
+  "join": "가입하기",
+  "try_premium": "프리미엄 시작하기"
 }
