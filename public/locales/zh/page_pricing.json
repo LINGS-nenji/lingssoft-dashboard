@@ -2,5 +2,21 @@
   "title": "为您选择最佳计划",
   "subtitle": "每个套餐都提供免费无限更新和高级支持。",
   "monthly": "Monthly (translated)",
-  "annual": "Annual (translated)"
+  "annual": "Annual (translated)",
+  "starter": "入门版",
+  "premium": "高级版",
+  "enterprise": "企业版",
+  "team_members_2": "2名团队成员",
+  "team_members_10": "10名团队成员",
+  "team_members_unlimited": "无限制团队成员",
+  "storage_20": "20GB 云存储",
+  "storage_40": "40GB 云存储",
+  "storage_100": "100GB 云存储",
+  "integration_help": "集成帮助",
+  "sketch_files": "Sketch 文件",
+  "api_access": "API 访问",
+  "complete_documentation": "完整文档",
+  "mo": "月",
+  "join": "加入",
+  "try_premium": "试用高级版"
 }

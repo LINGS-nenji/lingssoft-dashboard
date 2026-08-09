@@ -2,5 +2,21 @@
   "title": "最適なプランを選択",
   "subtitle": "各パッケージに無料の無制限アップデートとプレミアムサポートが付いています。",
   "monthly": "Monthly (translated)",
-  "annual": "Annual (translated)"
+  "annual": "Annual (translated)",
+  "starter": "スターター",
+  "premium": "プレミアム",
+  "enterprise": "エンタープライズ",
+  "team_members_2": "2人のチームメンバー",
+  "team_members_10": "10人のチームメンバー",
+  "team_members_unlimited": "無制限のチームメンバー",
+  "storage_20": "20GB クラウドストレージ",
+  "storage_40": "40GB クラウドストレージ",
+  "storage_100": "100GB クラウドストレージ",
+  "integration_help": "インテグレーションサポート",
+  "sketch_files": "Sketchファイル",
+  "api_access": "APIアクセス",
+  "complete_documentation": "完全なドキュメント",
+  "mo": "月",
+  "join": "参加する",
+  "try_premium": "プレミアムを試す"
 }

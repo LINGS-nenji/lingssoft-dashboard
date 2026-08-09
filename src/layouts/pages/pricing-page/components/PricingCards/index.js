@@ -28,31 +28,34 @@ import DefaultPricingCard from "examples/Cards/PricingCards/DefaultPricingCard";
 // Material Dashboard 3 PRO React context
 import { useMaterialUIController } from "context";
 
+import { useTranslation } from "react-i18next";
+
 function PricingCards({ prices }) {
   const [controller] = useMaterialUIController();
   const { darkMode } = controller;
   const [starter, premium, enterprise] = prices;
+  const { t } = useTranslation("page_pricing");
   return (
     <MDBox position="relative" zIndex={10} mt={8} px={{ xs: 1, sm: 0 }}>
       <Grid container spacing={3} justifyContent="center">
         <Grid item xs={12} lg={4}>
           <DefaultPricingCard
             color={darkMode ? "dark" : "white"}
-            badge={{ color: darkMode ? "warning" : "light", label: "starter" }}
-            price={{ currency: "$", value: starter, type: "mo" }}
+            badge={{ color: darkMode ? "warning" : "light", label: t("starter") }}
+            price={{ currency: "$", value: starter, type: t("mo") }}
             specifications={[
-              { label: "2 team members", includes: true },
-              { label: "20GB Cloud storage", includes: true },
-              { label: "Integration help", includes: false },
-              { label: "Sketch Files", includes: false },
-              { label: "API Access", includes: false },
-              { label: "Complete documentation", includes: false },
+              { label: t("team_members_2"), includes: true },
+              { label: t("storage_20"), includes: true },
+              { label: t("integration_help"), includes: false },
+              { label: t("sketch_files"), includes: false },
+              { label: t("api_access"), includes: false },
+              { label: t("complete_documentation"), includes: false },
             ]}
             action={{
               type: "internal",
               route: "/",
               color: darkMode ? "warning" : "dark",
-              label: "join",
+              label: t("join"),
             }}
             shadow={darkMode}
           />
@@ -60,42 +63,42 @@ function PricingCards({ prices }) {
         <Grid item xs={12} lg={4}>
           <DefaultPricingCard
             color="dark"
-            badge={{ color: "info", label: "premium" }}
-            price={{ currency: "$", value: premium, type: "mo" }}
+            badge={{ color: "info", label: t("premium") }}
+            price={{ currency: "$", value: premium, type: t("mo") }}
             specifications={[
-              { label: "10 team members", includes: true },
-              { label: "40GB Cloud storage", includes: true },
-              { label: "Integration help", includes: true },
-              { label: "Sketch Files", includes: true },
-              { label: "API Access", includes: false },
-              { label: "Complete documentation", includes: false },
+              { label: t("team_members_10"), includes: true },
+              { label: t("storage_40"), includes: true },
+              { label: t("integration_help"), includes: true },
+              { label: t("sketch_files"), includes: true },
+              { label: t("api_access"), includes: false },
+              { label: t("complete_documentation"), includes: false },
             ]}
             action={{
               type: "internal",
               route: "/",
               color: "info",
-              label: "try premium",
+              label: t("try_premium"),
             }}
           />
         </Grid>
         <Grid item xs={12} lg={4}>
           <DefaultPricingCard
             color={darkMode ? "dark" : "white"}
-            badge={{ color: darkMode ? "warning" : "light", label: "enterprise" }}
-            price={{ currency: "$", value: enterprise, type: "mo" }}
+            badge={{ color: darkMode ? "warning" : "light", label: t("enterprise") }}
+            price={{ currency: "$", value: enterprise, type: t("mo") }}
             specifications={[
-              { label: "Unlimited team members", includes: true },
-              { label: "100GB Cloud storage", includes: true },
-              { label: "Integration help", includes: true },
-              { label: "Sketch Files", includes: true },
-              { label: "API Access", includes: true },
-              { label: "Complete documentation", includes: true },
+              { label: t("team_members_unlimited"), includes: true },
+              { label: t("storage_100"), includes: true },
+              { label: t("integration_help"), includes: true },
+              { label: t("sketch_files"), includes: true },
+              { label: t("api_access"), includes: true },
+              { label: t("complete_documentation"), includes: true },
             ]}
             action={{
               type: "internal",
               route: "/",
               color: darkMode ? "warning" : "dark",
-              label: "join",
+              label: t("join"),
             }}
             shadow={darkMode}
           />

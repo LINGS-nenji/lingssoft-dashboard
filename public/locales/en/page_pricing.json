@@ -2,5 +2,21 @@
   "title": "Pick the best plan for you",
   "subtitle": "You have Free Unlimited Updates and Premium Support on each package.",
   "monthly": "Monthly",
-  "annual": "Annual"
+  "annual": "Annual",
+  "starter": "starter",
+  "premium": "premium",
+  "enterprise": "enterprise",
+  "team_members_2": "2 team members",
+  "team_members_10": "10 team members",
+  "team_members_unlimited": "Unlimited team members",
+  "storage_20": "20GB Cloud storage",
+  "storage_40": "40GB Cloud storage",
+  "storage_100": "100GB Cloud storage",
+  "integration_help": "Integration help",
+  "sketch_files": "Sketch Files",
+  "api_access": "API Access",
+  "complete_documentation": "Complete documentation",
+  "mo": "mo",
+  "join": "join",
+  "try_premium": "try premium"
 }
