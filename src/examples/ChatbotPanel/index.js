@@ -4,7 +4,7 @@
 =========================================================
 */
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
 import Divider from "@mui/material/Divider";
@@ -47,6 +47,15 @@ function ChatbotPanel() {
   const [messages, setMessages] = useState(() => (chatbotSaveHistory ? getStoredMessages() : []));
   const [isLoading, setIsLoading] = useState(false);
   const [sendPageContext, setSendPageContext] = useState(true);
+  const messagesEndRef = useRef(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages, isLoading]);
 
   const handleCloseChatbot = () => setOpenChatbot(dispatch, false);
   const handleSendMessage = async (event) => {
@@ -200,6 +209,7 @@ function ChatbotPanel() {
                   <CircularProgress size={20} color="info" />
                 </MDBox>
               )}
+              <div ref={messagesEndRef} />
             </>
           ) : (
             <>
