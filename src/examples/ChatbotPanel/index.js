@@ -86,8 +86,21 @@ function ChatbotPanel() {
         processing_status: "pending"
       };
 
-      // 도메인 주소(Base URL)는 설정(chatbotAiUrl)에서 가져오되, 값이 없으면 기본 도메인 사용
-      let baseUrl = chatbotAiUrl || "http://tiny.lingssoft.net";
+      // 도메인 주소(Base URL)는 설정(chatbotAiUrl)에서 가져옵니다.
+      let baseUrl = (chatbotAiUrl || "").trim();
+      
+      if (!baseUrl) {
+        throw new Error("API URL is not configured in settings.");
+      }
+      
+      // 사용자가 'http:/도메인' 처럼 슬래시를 하나만 쓰거나 오타를 냈을 경우 교정
+      baseUrl = baseUrl.replace(/^https?:\/+(?=[^\/])/i, match => match.toLowerCase().startsWith('https') ? 'https://' : 'http://');
+      
+      // 프로토콜(http/https)이 아예 없는 경우 https:// 를 강제로 붙임
+      if (!/^https?:\/\//i.test(baseUrl)) {
+        baseUrl = "https://" + baseUrl;
+      }
+      
       // 끝에 슬래시가 있으면 제거
       baseUrl = baseUrl.replace(/\/$/, "");
       
