@@ -123,17 +123,56 @@ function ChatbotPanel() {
       }
 
       const data = await response.json();
+      const recordId = data.id;
+      const botMessageId = recordId + "_bot";
 
+      // 처음엔 빈 메시지 껍데기를 만들어 둡니다.
       setMessages((currentMessages) => [
         ...currentMessages,
         {
-          id: Date.now() + 1,
+          id: botMessageId,
           role: "assistant",
-          // PocketBase는 즉각적인 AI 응답을 반환하지 않으므로, 일단 접수 메시지로 대체합니다.
-          // 향후 웹소켓(Realtime) 구독이나 Polling을 통해 AI 응답을 받아오도록 수정해야 합니다.
-          content: t("chatbot.response_received") || "메시지가 성공적으로 접수되었습니다. (응답 대기중)",
+          content: "🤔 생각 중...",
         },
       ]);
+
+      // 폴링(Polling) 함수: 생성된 레코드 정보를 주기적으로 가져옵니다.
+      const pollResponse = async () => {
+        try {
+          const fetchUrl = `${baseUrl}/api/collections/messages/records/${recordId}`;
+          const pollRes = await fetch(fetchUrl);
+          
+          if (!pollRes.ok) return;
+          
+          const pollData = await pollRes.json();
+          
+          // 파이썬 백엔드에서 업데이트 해주는 텍스트(아마도 message_text 필드)를 가져옵니다.
+          // 백엔드 구조에 따라 필드명이 다르면 message_text를 알맞게 수정하세요.
+          const newContent = pollData.message_text || pollData.text; 
+          
+          setMessages((currentMessages) =>
+            currentMessages.map((msg) =>
+              msg.id === botMessageId
+                ? { ...msg, content: newContent || "🤔 생각 중..." }
+                : msg
+            )
+          );
+
+          // processing_status가 더 이상 'pending'이 아니면 완료된 것으로 간주하고 폴링을 멈춥니다.
+          if (pollData.processing_status && pollData.processing_status !== "pending") {
+            setIsLoading(false);
+          } else {
+            // 아직 pending 상태라면 1.5초 뒤에 다시 확인
+            setTimeout(pollResponse, 1500);
+          }
+        } catch (err) {
+          console.error("Polling error:", err);
+          setIsLoading(false);
+        }
+      };
+
+      // 첫 번째 폴링 시작 (1.5초 후)
+      setTimeout(pollResponse, 1500);
     } catch (error) {
       console.error("Chatbot API Error:", error);
       setMessages((currentMessages) => [
@@ -144,7 +183,6 @@ function ChatbotPanel() {
           content: t("chatbot.api_error"),
         },
       ]);
-    } finally {
       setIsLoading(false);
     }
   };
