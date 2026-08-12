@@ -158,11 +158,15 @@ function ChatbotPanel() {
             )
           );
 
-          // processing_status가 더 이상 'pending'이 아니면 완료된 것으로 간주하고 폴링을 멈춥니다.
-          if (pollData.processing_status && pollData.processing_status !== "pending") {
+          // processing_status가 'completed'이거나 'error'일 때 폴링을 멈춥니다.
+          // 백엔드에서 생성 중에 'processing' 등으로 상태를 변경할 수 있으므로, 
+          // 'pending'이나 'processing' 등 완료되지 않은 상태일 때는 계속 폴링합니다.
+          const isFinished = pollData.processing_status === "completed" || pollData.processing_status === "error" || pollData.processing_status === "done";
+          
+          if (isFinished) {
             setIsLoading(false);
           } else {
-            // 아직 pending 상태라면 1.5초 뒤에 다시 확인
+            // 아직 완료되지 않았다면 1.5초 뒤에 다시 확인
             setTimeout(pollResponse, 1500);
           }
         } catch (err) {
