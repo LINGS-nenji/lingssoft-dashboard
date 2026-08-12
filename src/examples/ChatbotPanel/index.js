@@ -79,15 +79,29 @@ function ChatbotPanel() {
 
     try {
       const payload = {
-        pageContext: sendPageContext ? pageContext : undefined,
-        chatHistory: [...messages, newUserMessage].map(({ role, content }) => ({ role, content })),
+        text: nextMessage,
+        user_id: "test_user_1", // 하드코딩된 테스트용 사용자 ID
+        room: "test_room_admin_ui_2", // 하드코딩된 테스트용 방 ID
+        message_type: "user",
+        processing_status: "pending"
       };
 
-      const aiEndpoint = chatbotAiUrl || "http://localhost:5000/api/chat";
+      // 도메인 주소(Base URL)는 설정(chatbotAiUrl)에서 가져오되, 값이 없으면 기본 도메인 사용
+      let baseUrl = chatbotAiUrl || "http://tiny.lingssoft.net";
+      // 끝에 슬래시가 있으면 제거
+      baseUrl = baseUrl.replace(/\/$/, "");
+      
+      // 도메인 이후의 Path는 포켓베이스 메시지 컬렉션 구조에 종속적이므로 고정(fixed)으로 뺍니다.
+      const endpointPath = "/api/collections/messages/records";
+      
+      // 만약 설정에 이미 전체 경로가 포함되어 있다면 그대로 쓰고, 아니라면 합칩니다.
+      const aiEndpoint = baseUrl.endsWith(endpointPath) 
+        ? baseUrl 
+        : `${baseUrl}${endpointPath}`;
 
       const response = await fetch(aiEndpoint, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json; charset=utf-8" },
         body: JSON.stringify(payload),
       });
 
@@ -102,7 +116,9 @@ function ChatbotPanel() {
         {
           id: Date.now() + 1,
           role: "assistant",
-          content: data.answer || t("chatbot.response_received"),
+          // PocketBase는 즉각적인 AI 응답을 반환하지 않으므로, 일단 접수 메시지로 대체합니다.
+          // 향후 웹소켓(Realtime) 구독이나 Polling을 통해 AI 응답을 받아오도록 수정해야 합니다.
+          content: t("chatbot.response_received") || "메시지가 성공적으로 접수되었습니다. (응답 대기중)",
         },
       ]);
     } catch (error) {
