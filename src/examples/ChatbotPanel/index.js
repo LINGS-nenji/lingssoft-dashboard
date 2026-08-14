@@ -145,22 +145,22 @@ function ChatbotPanel() {
           if (!pollRes.ok) return;
           
           const pollData = await pollRes.json();
+          console.log("Polling Data:", pollData); // 디버깅용 로그
           
-          // 파이썬 백엔드에서 업데이트 해주는 텍스트(아마도 message_text 필드)를 가져옵니다.
-          // 백엔드 구조에 따라 필드명이 다르면 message_text를 알맞게 수정하세요.
-          const newContent = pollData.message_text || pollData.text; 
+          // 파이썬 백엔드에서 업데이트 해주는 텍스트
+          const newContent = pollData.message_text;
           
           setMessages((currentMessages) =>
-            currentMessages.map((msg) =>
-              msg.id === botMessageId
-                ? { ...msg, content: newContent || "🤔 생각 중..." }
-                : msg
-            )
+            currentMessages.map((msg) => {
+              if (msg.id === botMessageId) {
+                // 백엔드에서 빈 문자열이 오더라도 기존 내용을 날리지 않도록 처리해 봅니다.
+                const updatedContent = newContent || (msg.content === "🤔 생각 중..." ? "🤔 생각 중..." : msg.content);
+                return { ...msg, content: updatedContent };
+              }
+              return msg;
+            })
           );
 
-          // processing_status가 'completed'이거나 'error'일 때 폴링을 멈춥니다.
-          // 백엔드에서 생성 중에 'processing' 등으로 상태를 변경할 수 있으므로, 
-          // 'pending'이나 'processing' 등 완료되지 않은 상태일 때는 계속 폴링합니다.
           const isFinished = pollData.processing_status === "completed" || pollData.processing_status === "error" || pollData.processing_status === "done";
           
           if (isFinished) {
@@ -269,9 +269,15 @@ function ChatbotPanel() {
                     coloredShadow={isUser ? "info" : "none"}
                     sx={{ wordBreak: "break-word", whiteSpace: "pre-wrap" }}
                   >
-                    <MDTypography variant="button" color={isUser ? "white" : (darkMode ? "white" : "dark")}>
-                      {content}
-                    </MDTypography>
+                    {isUser ? (
+                      <MDTypography variant="button" color="white">
+                        {content}
+                      </MDTypography>
+                    ) : (
+                      <MDTypography variant="button" color={darkMode ? "white" : "dark"}>
+                        <span dangerouslySetInnerHTML={{ __html: content }} />
+                      </MDTypography>
+                    )}
                   </MDBox>
                 );
               })}
